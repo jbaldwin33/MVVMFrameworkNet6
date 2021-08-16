@@ -60,5 +60,10 @@ namespace TestApp
         {
             MessageBox.Show(e.Message, e.Caption, e.Button, e.Image);
         }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("message");
+        }
     }
 }

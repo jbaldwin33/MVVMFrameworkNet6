@@ -13,7 +13,7 @@
       <RowDefinition Height="auto"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    <controls:NavigationBar x:Name="navigationBar" Grid.Row="0" DataContext="{Binding Navigator}"/>
+    <controls:NavigationBar x:Name="navigationBar" Grid.Row="0" DataContext="{Binding Navigator}" Height="50"/>
     <Separator Grid.Row="1" Height="50"/>
     <ContentControl Grid.Row="2" Content="{Binding Navigator.CurrentViewModel}"/>
   </Grid>

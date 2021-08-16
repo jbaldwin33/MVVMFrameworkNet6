@@ -19,7 +19,6 @@ namespace MVVMFramework.ViewModels
         }
 
 
-        public virtual void CancelOperation() => throw new NotImplementedException();
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         protected bool SetProperty<T>(ref T fieldReference, T newValue, string propertyName = null)

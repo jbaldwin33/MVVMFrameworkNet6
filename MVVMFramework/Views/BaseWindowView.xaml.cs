@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
+using MVVMFramework.Controls;
 using MVVMFramework.ViewNavigator;
 
 namespace MVVMFramework.Views
@@ -21,7 +22,7 @@ namespace MVVMFramework.Views
             InitializeComponent();
             foreach (var type in viewModelTypes)
             {
-                var button = new Button { CommandParameter = type };
+                var button = new SmallButton { CommandParameter = type };
                 var binding = new Binding("Title") { Source = Activator.CreateInstance(type) };
                 var binding2 = new Binding(nameof(Navigator.Instance.UpdateCurrentViewModelCommand));
 

@@ -5,9 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestApp"
         xmlns:views="clr-namespace:MVVMFramework.Views;assembly=MVVMFramework"
+        xmlns:controls="clr-namespace:MVVMFramework.Controls;assembly=MVVMFramework"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Command="{Binding ShowMessageCommand}" Content="{Binding ButtonLabel}" Width="200" Height="50" />
-    </Grid>
+  <Grid>
+    <controls:DefaultStackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+      <controls:ExtraSmallButton Content="xtra"/>
+      <controls:SmallButton Content="small"/>
+      <controls:MediumButton Content="medium"/>
+      <controls:LargeButton Content="large"/>
+      <controls:ExtraLargeButton Content="xtralarge"/>
+      <controls:LargeTextBox Text="090909"/>
+    </controls:DefaultStackPanel>
+  </Grid>
 </views:ViewBase>

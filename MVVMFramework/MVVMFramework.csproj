@@ -47,7 +47,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\DefaultStyles.cs" />
+    <Compile Include="Controls\ButtonStyles.cs" />
+    <Compile Include="Controls\ComboBoxStyles.cs" />
+    <Compile Include="Controls\ControlUtilities.cs" />
+    <Compile Include="Controls\DefaultControlStyles.cs" />
+    <Compile Include="Controls\TextBlockStyles.cs" />
+    <Compile Include="Controls\TextBoxStyles.cs" />
     <Compile Include="ViewModels\PopupWindowViewModel.cs" />
     <Compile Include="ViewNavigator\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
