@@ -25,10 +25,9 @@ namespace TestApp
     public partial class MainWindow : ViewBase
     {
         private TestViewModel vm;
-        public MainWindow(TestViewModel testViewModel)
+        public MainWindow(TestViewModel testViewModel) : base(testViewModel)
         {
             InitializeComponent();
-            DataContext = testViewModel;
             vm = testViewModel;
             vm.ShowMessageBoxEventHandler += Vm_ShowMessageBoxEventHandler;
 
@@ -58,7 +57,7 @@ namespace TestApp
 
         private void Vm_ShowMessageBoxEventHandler(object sender, MessageBoxEventArgs e)
         {
-            MessageBox.Show(e.Message, e.Caption, e.Button, e.Image);
+            e.Result = MessageBox.Show(e.Message, e.Caption, e.Button, e.Image);
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)

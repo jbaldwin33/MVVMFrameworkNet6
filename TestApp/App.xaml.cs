@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using MVVMFramework.Views;
 
 namespace TestApp
 {
@@ -16,7 +17,8 @@ namespace TestApp
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            var window = new MainWindow(new TestViewModel());
+            //var window = new MainWindow(new TestViewModel());
+            var window = new BaseWindowView(new[] { (typeof(TestViewModel), "Test") });
             window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             window.Show();
             base.OnStartup(e);

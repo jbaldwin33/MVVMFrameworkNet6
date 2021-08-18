@@ -1,10 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using MVVMFramework.Controls;
+using MVVMFramework.Utilities;
+using MVVMFramework.ViewModels;
 using MVVMFramework.ViewNavigator;
 
 namespace MVVMFramework.Views
@@ -14,21 +16,35 @@ namespace MVVMFramework.Views
     /// </summary>
     public partial class BaseWindowView : ViewBase
     {
-        public BaseWindowView(Type[] viewModelTypes)
+        public BaseWindowView((Type, string)[] viewModelTypes) : base(new MainViewModel(Navigator.Instance))
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             if (viewModelTypes == null || viewModelTypes.Length == 0)
                 throw new ArgumentNullException(nameof(viewModelTypes));
 
             InitializeComponent();
-            foreach (var type in viewModelTypes)
+            foreach (var (type, name) in viewModelTypes)
             {
-                var button = new SmallButton { CommandParameter = type };
-                var binding = new Binding("Title") { Source = Activator.CreateInstance(type) };
-                var binding2 = new Binding(nameof(Navigator.Instance.UpdateCurrentViewModelCommand));
+                var instance = (ViewModel)Activator.CreateInstance(type);
+                if (Navigator.Instance.CurrentViewModel == null)
+                    Navigator.Instance.CurrentViewModel = instance;
 
-                button.SetBinding(ContentProperty, binding);
-                button.SetBinding(ButtonBase.CommandProperty, binding2);
-
+                Navigator.Instance.ViewModels.Add(instance);
+                var button = new SmallButton
+                {
+                    CommandParameter = instance,
+                    Content = name,
+                    Command = Navigator.Instance.UpdateCurrentViewModelCommand,
+                };
+                var binding = new Binding("IsShown")
+                {
+                    Mode = BindingMode.TwoWay, 
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged, 
+                    Converter = new InverseBooleanConverter(),
+                    Source = Navigator.Instance.ViewModels.FirstOrDefault(vm => vm.GetType() == type)
+                };
+                
+                button.SetBinding(IsEnabledProperty, binding);
                 navigationBar.stackPanel.Children.Add(button);
             }
         }

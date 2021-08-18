@@ -23,4 +23,17 @@ namespace MVVMFramework.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DefaultStackPanel), new FrameworkPropertyMetadata(typeof(DefaultStackPanel)));
         }
     }
+
+    public class SliderWithLabels : Slider
+    {
+        public SliderWithLabels()
+        {
+            
+        }
+
+        static SliderWithLabels()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(SliderWithLabels), new FrameworkPropertyMetadata(typeof(SliderWithLabels)));
+        }
+    }
 }

@@ -1,11 +1,14 @@
 ﻿using System;
+using System.CodeDom;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Input;
-using System.Windows.Controls;
-using System.Windows.Data;
 using MVVMFramework.ViewModels;
 using MVVMFramework.Views;
+using Application = System.Windows.Application;
 
 namespace MVVMFramework.ViewNavigator
 {
@@ -17,8 +20,10 @@ namespace MVVMFramework.ViewNavigator
 
     public interface INavigator
     {
+        List<ViewModel> ViewModels { get; set; }
         ViewModel CurrentViewModel { get; set; }
         ViewModel ChildViewModel { get; set; }
+        Window ChildView { get; set; }
         ICommand UpdateCurrentViewModelCommand { get; }
         ICommand OpenChildWindow { get; }
         ICommand CloseChildWindow { get; }
@@ -29,7 +34,7 @@ namespace MVVMFramework.ViewNavigator
     {
         private static readonly Lazy<Navigator> instance = new Lazy<Navigator>(() => new Navigator());
         public static Navigator Instance => instance.Value;
-
+        private List<ViewModel> viewModels = new List<ViewModel>();
         private ViewModel currentViewModel;
         private ViewModel childViewModel;
         private bool childViewShown;
@@ -42,6 +47,16 @@ namespace MVVMFramework.ViewNavigator
         }
 
         #region Properties
+
+        public List<ViewModel> ViewModels
+        {
+            get => viewModels;
+            set
+            {
+                viewModels = value;
+                OnPropertyChanged(nameof(ViewModels));
+            }
+        }
 
         public ViewModel CurrentViewModel
         {
@@ -88,8 +103,8 @@ namespace MVVMFramework.ViewNavigator
         public void SetChildViewShown(bool shown) => ChildViewShown = shown;
 
         public ICommand UpdateCurrentViewModelCommand => new UpdateCurrentViewModelCommand(this);
-        public ICommand OpenChildWindow => new OpenChildWindowCommand();
-        public ICommand CloseChildWindow => new CloseChildWindowCommand();
+        public ICommand OpenChildWindow => new OpenChildWindowCommand(this);
+        public ICommand CloseChildWindow => new CloseChildWindowCommand(this);
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -106,18 +121,22 @@ namespace MVVMFramework.ViewNavigator
             this.navigator = navigator;
         }
 
-        public bool CanExecute(object parameter) => true;
+        public bool CanExecute(object parameter) => parameter is ViewModel vm && !vm.IsShown;
 
         public void Execute(object parameter)
         {
-            var type = parameter as Type;
-            if (type?.BaseType == typeof(ViewModel))
-            {
-                var instance = Activator.CreateInstance(type);
-                navigator.CurrentViewModel = (ViewModel)instance;
-            }
-            else
+            if (!(parameter is ViewModel vm))
                 throw new NotSupportedException();
+
+            if (vm == navigator.CurrentViewModel)
+                return;
+
+            navigator.CurrentViewModel = vm;
+        }
+
+        public void RaiseCanExecuteChanged()
+        {
+            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -125,34 +144,47 @@ namespace MVVMFramework.ViewNavigator
     {
 
         public event EventHandler CanExecuteChanged;
+        private INavigator navigator;
+
+        public OpenChildWindowCommand(INavigator navigator)
+        {
+            this.navigator = navigator;
+        }
 
         public bool CanExecute(object parameter) => true;
 
         public void Execute(object parameter)
         {
-            Navigator.Instance.ChildView = new PopupWindowView
+            navigator.ChildView = new PopupWindowView
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
-                contentControl = { Content = parameter as ViewModel }
+                contentControl = { Content = parameter as ViewModel },
+                WindowStyle = WindowStyle.None
             };
-            Navigator.Instance.ChildViewModel = parameter as ViewModel;
-            Navigator.Instance.SetChildViewShown(true);
-            Navigator.Instance.ChildView.Owner = Application.Current.MainWindow;
-            Navigator.Instance.ChildView.Show();
+            navigator.ChildViewModel = parameter as ViewModel;
+            navigator.SetChildViewShown(true);
+            navigator.ChildView.Owner = Application.Current.MainWindow;
+            navigator.ChildView.ShowDialog();
         }
     }
 
     public class CloseChildWindowCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
+        private INavigator navigator;
+
+        public CloseChildWindowCommand(INavigator navigator)
+        {
+            this.navigator = navigator;
+        }
 
         public bool CanExecute(object parameter) => true;
 
         public void Execute(object parameter)
         {
-            Navigator.Instance.ChildViewModel = null;
-            Navigator.Instance.SetChildViewShown(false);
-            Application.Current.Dispatcher.Invoke(() => Navigator.Instance.ChildView.Close());
+            navigator.ChildViewModel = null;
+            navigator.SetChildViewShown(false);
+            Application.Current.Dispatcher.Invoke(() => navigator.ChildView.Close());
         }
     }
 }

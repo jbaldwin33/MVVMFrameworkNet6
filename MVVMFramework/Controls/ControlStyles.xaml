@@ -3,6 +3,7 @@
                     xmlns:local="clr-namespace:MVVMFramework.Controls"
                     xmlns:utilities="clr-namespace:MVVMFramework.Utilities">
   <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
+  <utilities:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
   <utilities:InverseBooleanToVisibilityConverter x:Key="InvBoolToVisConverter"/>
 
   <Style TargetType="{x:Type Button}">

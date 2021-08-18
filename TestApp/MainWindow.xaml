@@ -14,8 +14,7 @@
       <controls:SmallButton Content="small"/>
       <controls:MediumButton Content="medium"/>
       <controls:LargeButton Content="large"/>
-      <controls:ExtraLargeButton Content="xtralarge"/>
-      <controls:LargeTextBox Text="090909"/>
+      <controls:ExtraLargeButton Content="xtralarge" Command="{Binding ShowMessageCommand}"/>
     </controls:DefaultStackPanel>
   </Grid>
 </views:ViewBase>

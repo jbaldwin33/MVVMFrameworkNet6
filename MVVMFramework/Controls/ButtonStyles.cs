@@ -12,9 +12,10 @@ namespace MVVMFramework.Controls
         internal static Trigger[] CreateButtonTriggers() =>
             new[]
             {
-                CreateTrigger(UIElement.IsMouseOverProperty, true, new[] { CreateSetter(Control.BackgroundProperty, Brushes.CadetBlue) }),
-                CreateTrigger(UIElement.IsMouseOverProperty, false, new[] { CreateSetter(Control.BorderBrushProperty, Brushes.Transparent), CreateSetter(Control.BackgroundProperty, Brushes.DarkGray) }),
-                CreateTrigger(ButtonBase.IsPressedProperty, true, new [] { CreateSetter(Control.BorderBrushProperty, Brushes.Transparent), CreateSetter(UIElement.OpacityProperty, 0.8) })
+                CreateTrigger(UIElement.IsMouseOverProperty, true, new [] { CreateSetter(Control.BackgroundProperty, Brushes.CadetBlue) }),
+                CreateTrigger(UIElement.IsMouseOverProperty, false, new [] { CreateSetter(Control.BorderBrushProperty, Brushes.Transparent), CreateSetter(Control.BackgroundProperty, Brushes.DarkGray) }),
+                CreateTrigger(ButtonBase.IsPressedProperty, true, new [] { CreateSetter(Control.BorderBrushProperty, Brushes.Transparent), CreateSetter(UIElement.OpacityProperty, 0.8) }),
+                CreateTrigger(UIElement.IsEnabledProperty, false, new [] { CreateSetter(Control.BackgroundProperty, Brushes.LightGray), CreateSetter(UIElement.OpacityProperty, 0.5), CreateSetter(ContentControl.ContentProperty, Brushes.LightGray)})
             };
 
         internal static Setter[] CreateButtonSetters() =>

@@ -22,7 +22,5 @@ namespace MVVMFramework.ViewNavigator
         {
             InitializeComponent();
         }
-
-        public StackPanel GetStackPanel() => stackPanel;
     }
 }

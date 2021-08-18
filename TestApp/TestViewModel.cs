@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace TestApp
 {
     public class TestViewModel : ViewModel
     {
+        public static string Title => "Test";
         private int myVar;
 
         public int MyProperty
@@ -42,8 +44,8 @@ namespace TestApp
 
         private void ShowMessageExecute()
         {
-            Navigator.Instance.OpenChildWindow.Execute(new ProgressBarViewModel());
-            //ShowMessage(new MessageBoxEventArgs("test", "test", MessageBoxButton.OK, MessageBoxImage.Information));
+            Navigator.Instance.UpdateCurrentViewModelCommand.Execute(new ProgressBarViewModel());
+            ShowMessage(new MessageBoxEventArgs("test", "test", MessageBoxButton.OK, MessageBoxImage.Information));
         }
 
         public void wait(int milliseconds)
