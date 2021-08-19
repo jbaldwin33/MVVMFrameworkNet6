@@ -15,6 +15,7 @@
       <controls:MediumButton Content="medium"/>
       <controls:LargeButton Content="large"/>
       <controls:ExtraLargeButton Content="xtralarge" Command="{Binding ShowMessageCommand}"/>
+      <controls:DefaultCheckBox Content="wer wer wer "></controls:DefaultCheckBox>
     </controls:DefaultStackPanel>
   </Grid>
 </views:ViewBase>

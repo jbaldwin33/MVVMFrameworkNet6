@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using static MVVMFramework.Controls.ControlUtilities;
 
 namespace MVVMFramework.Controls
 {
@@ -24,16 +25,17 @@ namespace MVVMFramework.Controls
         }
     }
 
-    public class SliderWithLabels : Slider
+    public class DefaultCheckBox : CheckBox
     {
-        public SliderWithLabels()
+        public DefaultCheckBox()
         {
-            
+            Template = SetTemplateContent<DefaultCheckBox>();
+            Margin = new Thickness(10);
         }
 
-        static SliderWithLabels()
+        static DefaultCheckBox()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SliderWithLabels), new FrameworkPropertyMetadata(typeof(SliderWithLabels)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(DefaultCheckBox), new FrameworkPropertyMetadata(typeof(DefaultCheckBox)));
         }
     }
 }
