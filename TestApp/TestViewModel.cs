@@ -44,7 +44,6 @@ namespace TestApp
 
         private void ShowMessageExecute()
         {
-            Navigator.Instance.UpdateCurrentViewModelCommand.Execute(new ProgressBarViewModel());
             ShowMessage(new MessageBoxEventArgs("test", "test", MessageBoxButton.OK, MessageBoxImage.Information));
         }
 

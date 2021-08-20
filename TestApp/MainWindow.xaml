@@ -1,4 +1,4 @@
-﻿<views:ViewBase x:Class="TestApp.MainWindow"
+﻿<views:ViewBaseControl x:Class="TestApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,15 +7,15 @@
         xmlns:views="clr-namespace:MVVMFramework.Views;assembly=MVVMFramework"
         xmlns:controls="clr-namespace:MVVMFramework.Controls;assembly=MVVMFramework"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Height="450" Width="800">
   <Grid>
-    <controls:DefaultStackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
       <controls:ExtraSmallButton Content="xtra"/>
       <controls:SmallButton Content="small"/>
       <controls:MediumButton Content="medium"/>
       <controls:LargeButton Content="large"/>
       <controls:ExtraLargeButton Content="xtralarge" Command="{Binding ShowMessageCommand}"/>
-      <controls:DefaultCheckBox Content="wer wer wer "></controls:DefaultCheckBox>
-    </controls:DefaultStackPanel>
+      <CheckBox Content="wer wer wer " Style="{StaticResource customCheck}"/>
+    </StackPanel>
   </Grid>
-</views:ViewBase>
+</views:ViewBaseControl>

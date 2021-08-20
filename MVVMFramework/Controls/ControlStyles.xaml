@@ -6,17 +6,15 @@
   <utilities:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
   <utilities:InverseBooleanToVisibilityConverter x:Key="InvBoolToVisConverter"/>
 
-  <Style TargetType="{x:Type Button}">
-    <Setter Property="Margin" Value="0,0,10,10"/>
-    <Setter Property="Width" Value="60"/>
-    <Setter Property="Height" Value="25"/>
+  <Style TargetType="{x:Type CheckBox}">
+    <Setter Property="Margin" Value="10"/>
   </Style>
 
-  <Style TargetType="{x:Type TextBox}">
-    <Setter Property="Margin" Value="0,0,10,0"/>
-    <Setter Property="Width" Value="90"/>
-    <Setter Property="Height" Value="20"/>
-    <Setter Property="TextAlignment" Value="Center"/>
+  <Style TargetType="StackPanel">
+    <Setter Property="Orientation" Value="Vertical"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+    <Setter Property="VerticalAlignment" Value="Top"/>
+    <Setter Property="Margin" Value="10"/>
   </Style>
 
   <LinearGradientBrush x:Key="NormalBrush" StartPoint="0,0" EndPoint="0,1">

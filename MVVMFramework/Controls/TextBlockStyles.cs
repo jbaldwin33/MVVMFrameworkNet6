@@ -4,15 +4,32 @@ using System.Windows.Controls;
 
 namespace MVVMFramework.Controls
 {
-    public class SmallTextBlock : TextBlock
+    public static class TextBlockUtilities
     {
-        public SmallTextBlock()
+        
+    }
+
+    public class DefaultTextBlock : TextBlock
+    {
+        public DefaultTextBlock()
         {
             HorizontalAlignment = HorizontalAlignment.Center;
             Margin = new Thickness(5, 0, 5, 5);
+            Padding = new Thickness(5, 5, 5, 5);
+
+        }
+
+        static DefaultTextBlock()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(DefaultTextBlock), new FrameworkPropertyMetadata(typeof(DefaultTextBlock)));
+        }
+    }
+    public class SmallTextBlock : DefaultTextBlock
+    {
+        public SmallTextBlock()
+        {
             Width = 80;
             Height = 25;
-            Padding = new Thickness(5, 5, 5, 5);
             FontSize = 15;
         }
 
@@ -22,15 +39,12 @@ namespace MVVMFramework.Controls
         }
     }
 
-    public class MediumTextBlock : TextBlock
+    public class MediumTextBlock : DefaultTextBlock
     {
         public MediumTextBlock()
         {
-            HorizontalAlignment = HorizontalAlignment.Center;
-            Margin = new Thickness(5, 0, 5, 5);
             Width = 120;
             Height = 25;
-            Padding = new Thickness(5, 5, 5, 5);
             FontSize = 15;
         }
 
@@ -40,15 +54,12 @@ namespace MVVMFramework.Controls
         }
     }
 
-    public class LargeTextBlock : TextBlock
+    public class LargeTextBlock : DefaultTextBlock
     {
         public LargeTextBlock()
         {
-            HorizontalAlignment = HorizontalAlignment.Center;
-            Margin = new Thickness(5, 0, 5, 5);
             Width = 160;
             Height = 25;
-            Padding = new Thickness(5, 5, 5, 5);
             FontSize = 15;
         }
 

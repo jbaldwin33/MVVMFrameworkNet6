@@ -14,46 +14,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MVVMFramework.ViewModels;
+using MVVMFramework.ViewNavigator;
 using MVVMFramework.Views;
-using ViewBase = MVVMFramework.Views.ViewBase;
 
 namespace TestApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : ViewBase
+    public partial class MainWindow : ViewBaseControl
     {
-        private TestViewModel vm;
-        public MainWindow(TestViewModel testViewModel) : base(testViewModel)
+        public MainWindow() : base(Navigator.Instance.CurrentViewModel)
         {
             InitializeComponent();
-            vm = testViewModel;
-            vm.ShowMessageBoxEventHandler += Vm_ShowMessageBoxEventHandler;
-
         }
-
-        protected override void BeforeShow(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        protected override void AfterShow(object sender, EventArgs e)
-        {
-            vm.wait(3000);
-            vm.MyBool = true;
-        }
-
-        protected override void OnClosing(object sender, CancelEventArgs e)
-        {
-            
-        }
-
-        protected override void OnClosed(object sender, EventArgs e)
-        {
-            
-        }
-
 
         private void Vm_ShowMessageBoxEventHandler(object sender, MessageBoxEventArgs e)
         {

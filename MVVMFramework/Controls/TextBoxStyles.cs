@@ -33,6 +33,7 @@ namespace MVVMFramework.Controls
     {
         protected DefaultTextBox()
         {
+            Template = SetTemplateContent<DefaultTextBox>();
             HorizontalAlignment = HorizontalAlignment.Left;
             Margin = new Thickness(5, -2, 0, 0);
             Padding = new Thickness(0, -3, 0, 0);
@@ -46,7 +47,6 @@ namespace MVVMFramework.Controls
     {
         public SmallTextBox()
         {
-            Template = SetTemplateContent<SmallTextBox>();
             Width = 50;
             Height = 20;
             FontSize = 15;
@@ -62,7 +62,6 @@ namespace MVVMFramework.Controls
     {
         public MediumTextBox()
         {
-            Template = SetTemplateContent<MediumTextBox>();
             Width = 100;
             Height = 25;
             FontSize = 20;
@@ -78,7 +77,6 @@ namespace MVVMFramework.Controls
     {
         public LargeTextBox()
         {
-            Template = SetTemplateContent<LargeTextBox>();
             Width = 150;
             Height = 30;
             FontSize = 25;

@@ -29,6 +29,7 @@ namespace MVVMFramework.Controls
     {
         protected DefaultButton()
         {
+            Template = SetTemplateContent<DefaultButton>();
             Style = SetStyle(CreateButtonSetters(), CreateButtonTriggers());
             HorizontalAlignment = HorizontalAlignment.Center;
             VerticalAlignment = VerticalAlignment.Center;
@@ -41,7 +42,6 @@ namespace MVVMFramework.Controls
     {
         public ExtraSmallButton()
         {
-            Template = SetTemplateContent<ExtraSmallButton>();
             Width = 50;
             Height = 25;
         }
@@ -56,7 +56,6 @@ namespace MVVMFramework.Controls
     {
         public SmallButton()
         {
-            Template = SetTemplateContent<SmallButton>();
             Width = 75;
             Height = 25;
         }
@@ -71,7 +70,6 @@ namespace MVVMFramework.Controls
     {
         public MediumButton()
         {
-            Template = SetTemplateContent<MediumButton>();
             Width = 100;
             Height = 25;
         }
@@ -86,7 +84,6 @@ namespace MVVMFramework.Controls
     {
         public LargeButton()
         {
-            Template = SetTemplateContent<LargeButton>();
             Width = 125;
             Height = 25;
         }
@@ -101,7 +98,6 @@ namespace MVVMFramework.Controls
     {
         public ExtraLargeButton()
         {
-            Template = SetTemplateContent<ExtraLargeButton>();
             Width = 150;
             Height = 25;
         }

@@ -8,8 +8,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
   <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
-    <controls:DefaultStackPanel x:Name="stackPanel" Orientation="Horizontal">
+    <StackPanel x:Name="stackPanel" Orientation="Horizontal">
       
-    </controls:DefaultStackPanel>
+    </StackPanel>
   </Grid>
 </UserControl>

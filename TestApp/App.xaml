@@ -136,69 +136,63 @@
     </Style>-->
 
 
-    <Style x:Key="styleSlider3D" TargetType="Slider">
-      <Setter Property="Orientation" Value="Vertical" />
-      <Setter Property="Minimum" Value="-25" />
-      <Setter Property="Maximum" Value="25" />
+    <Style x:Key="customCheck" TargetType="CheckBox">
       <Setter Property="Template">
         <Setter.Value>
-          <ControlTemplate TargetType="Slider">
-            <Border BorderBrush="{TemplateBinding BorderBrush}" 
-              BorderThickness="{TemplateBinding BorderThickness}"
-              Background="{TemplateBinding Background}">
-              <Grid>
-                <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="Auto" />
-                  <ColumnDefinition Width="50" />
-                  <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <TickBar Grid.Column="0" Name="LeftTick"
-                   Width="10" Placement="Left" Visibility="Collapsed" 
-                   Fill="{TemplateBinding Foreground}" />
-                <TickBar Grid.Column="2" Name="RightTick" Width="10" Placement="Right" Visibility="Collapsed" Fill="{TemplateBinding Foreground}" />
-                <Border Grid.Column="1" Margin="21 22 21 22" CornerRadius="2 2 2 2" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
-                <Track Grid.Column="1" Name="PART_Track">
-                  <Track.DecreaseRepeatButton>
-                    <RepeatButton Command="Slider.DecreaseLarge" IsTabStop="False" Focusable="False">
-                      <RepeatButton.Template>
-                        <ControlTemplate>
-                          <Border Background="Transparent" />
-                        </ControlTemplate>
-                      </RepeatButton.Template>
-                    </RepeatButton>
-                  </Track.DecreaseRepeatButton>
-                  <Track.IncreaseRepeatButton>
-                    <RepeatButton Command="Slider.IncreaseLarge" IsTabStop="False" Focusable="False">
-                      <RepeatButton.Template>
-                        <ControlTemplate>
-                          <Border Background="Transparent" />
-                        </ControlTemplate>
-                      </RepeatButton.Template>
-                    </RepeatButton>
-                  </Track.IncreaseRepeatButton>
-                  <Track.Thumb>
-                    <Thumb Height="50">
-                      <Thumb.Template>
-                        <ControlTemplate>
-                          <Border Background="Black">
-                            <Rectangle Fill="{TemplateBinding TextElement.Foreground}" Name="ForegroundRect" Margin="-1,-1,-1,-1" Opacity="0.5" />
-                          </Border>
-                        </ControlTemplate>
-                      </Thumb.Template>
-                    </Thumb>
-                  </Track.Thumb>
-                </Track>
-              </Grid>
-            </Border>
+          <ControlTemplate TargetType="CheckBox">
+            <BulletDecorator Background="Transparent">
+              <BulletDecorator.Bullet>
+                <Border x:Name="Border"  
+              Width="13" 
+              Height="13" 
+              CornerRadius="0" 
+              Background="{StaticResource NormalBrush}"
+              BorderThickness="1"
+              BorderBrush="{StaticResource NormalBorderBrush}">
+                  <Path 
+                Width="7" Height="7" 
+                x:Name="CheckMark"
+                SnapsToDevicePixels="False" 
+                Stroke="{StaticResource GlyphBrush}"
+                StrokeThickness="2"
+                Data="M 0 0 L 7 7 M 0 7 L 7 0" />
+                </Border>
+              </BulletDecorator.Bullet>
+              <ContentPresenter Margin="4,0,0,0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            RecognizesAccessKey="True"/>
+            </BulletDecorator>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsChecked" Value="false">
+                <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+              </Trigger>
+              <Trigger Property="IsChecked" Value="{x:Null}">
+                <Setter TargetName="CheckMark" Property="Data" Value="M 0 7 L 7 0" />
+              </Trigger>
+              <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource DarkBrush}" />
+              </Trigger>
+              <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource PressedBrush}" />
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource PressedBorderBrush}" />
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="false">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource DisabledBackgroundBrush}" />
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
           </ControlTemplate>
         </Setter.Value>
       </Setter>
-
-
     </Style>
 
     <DataTemplate DataType="{x:Type viewModels:ProgressBarViewModel}">
       <views:ProgressBarView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:TestViewModel}">
+      <local:MainWindow/>
     </DataTemplate>
   </Application.Resources>
 </Application>
