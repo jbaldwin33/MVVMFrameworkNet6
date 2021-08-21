@@ -135,6 +135,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y "C:\Users\Josh\VSProjects\MVVMFramework\MVVMFramework\bin\Debug\MVVMFramework.dll" "C:\Users\Josh\VSProjects\VideoEditorNetFramework\VideoEditorUi\bin\Debug"</PostBuildEvent>
+    <PostBuildEvent>xcopy /Y "$(OutputDir)MVVMFramework.dll" "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug"</PostBuildEvent>
   </PropertyGroup>
 </Project>
