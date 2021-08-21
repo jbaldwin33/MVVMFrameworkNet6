@@ -8,6 +8,8 @@ namespace MVVMFramework.ViewModels
 {
     public abstract class ViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        public event EventHandler<MessageBoxEventArgs> ShowMessageBoxEventHandler;
         private bool isShown;
 
         public bool IsShown
@@ -16,9 +18,12 @@ namespace MVVMFramework.ViewModels
             set => SetProperty(ref isShown, value);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public event EventHandler<MessageBoxEventArgs> ShowMessageBoxEventHandler;
+        public ViewModel()
+        {
+            
+        }
         
+
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         protected bool SetProperty<T>(ref T fieldReference, T newValue, string propertyName = null)
@@ -33,6 +38,16 @@ namespace MVVMFramework.ViewModels
         }
 
         protected void ShowMessage(MessageBoxEventArgs e) => ShowMessageBoxEventHandler?.Invoke(this, e);
+
+        public virtual void OnLoaded()
+        {
+            
+        }
+
+        public virtual void OnUnloaded()
+        {
+
+        }
     }
 
     public class MessageBoxEventArgs : EventArgs

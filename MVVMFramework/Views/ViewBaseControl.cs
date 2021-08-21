@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using MVVMFramework.ViewModels;
 
@@ -7,6 +8,9 @@ namespace MVVMFramework.Views
     public abstract class ViewBaseControl : UserControl
     {
         private ViewModel viewModel;
+        public event EventHandler OnLoadedHandler;
+        public event EventHandler OnUnloadedHandler;
+
         public ViewBaseControl(ViewModel viewModel) : this()
         {
             this.viewModel = viewModel;
@@ -19,6 +23,8 @@ namespace MVVMFramework.Views
         {
             viewModel.IsShown = true;
             viewModel.ShowMessageBoxEventHandler += ViewModel_ShowMessageBoxEventHandler;
+            viewModel.OnLoaded();
+            //OnLoadedHandler?.Invoke(this, EventArgs.Empty);
         }
 
         public virtual void ViewBaseControl_Unloaded(object sender, RoutedEventArgs e)
@@ -27,6 +33,8 @@ namespace MVVMFramework.Views
             viewModel.ShowMessageBoxEventHandler -= ViewModel_ShowMessageBoxEventHandler;
             Loaded -= ViewBaseControl_Loaded;
             Unloaded -= ViewBaseControl_Unloaded;
+            viewModel.OnUnloaded();
+            //OnUnloadedHandler?.Invoke(this, EventArgs.Empty);
         }
 
         public ViewBaseControl()
