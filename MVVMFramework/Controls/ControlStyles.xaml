@@ -7,14 +7,19 @@
   <utilities:InverseBooleanToVisibilityConverter x:Key="InvBoolToVisConverter"/>
 
   <Style TargetType="{x:Type CheckBox}">
-    <Setter Property="Margin" Value="10"/>
+    <Setter Property="Margin" Value="10,0,10,10"/>
+  </Style>
+
+  <Style TargetType="{x:Type ComboBox}">
+<Setter Property="Margin" Value="10,0,10,10"/>
+<Setter Property="Padding" Value="5"/>
   </Style>
 
   <Style TargetType="StackPanel">
-    <Setter Property="Orientation" Value="Vertical"/>
+    <Setter Property="Orientation" Value="Horizontal"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
     <Setter Property="VerticalAlignment" Value="Top"/>
-    <Setter Property="Margin" Value="10"/>
+    <!--<Setter Property="Margin" Value="10,0,10,10"/>-->
   </Style>
 
   <LinearGradientBrush x:Key="NormalBrush" StartPoint="0,0" EndPoint="0,1">

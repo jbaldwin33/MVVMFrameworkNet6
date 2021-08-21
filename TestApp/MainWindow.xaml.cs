@@ -31,7 +31,7 @@ namespace TestApp
 
         private void Vm_ShowMessageBoxEventHandler(object sender, MessageBoxEventArgs e)
         {
-            e.Result = MessageBox.Show(e.Message, e.Caption, e.Button, e.Image);
+            e.Result = MessageBox.Show(e.Message, e.MessageType.ToString(), e.Button, e.Image);
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)

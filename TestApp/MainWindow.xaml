@@ -15,7 +15,7 @@
       <controls:MediumButton Content="medium"/>
       <controls:LargeButton Content="large"/>
       <controls:ExtraLargeButton Content="xtralarge" Command="{Binding ShowMessageCommand}"/>
-      <CheckBox Content="wer wer wer " Style="{StaticResource customCheck}"/>
+      <controls:DefaultButton Content="Rsd asd asd asd asd asdg" />
     </StackPanel>
   </Grid>
 </views:ViewBaseControl>

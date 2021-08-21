@@ -1,22 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace MVVMFramework.Controls
 {
-    public class ExtraSmallComboBox : ComboBox
+    public class DefaultComboBox : ComboBox
+    {
+        public DefaultComboBox()
+        {
+            HorizontalAlignment = HorizontalAlignment.Left;
+            Margin = new Thickness(10, 0, 10, 10);
+            Padding = new Thickness(5);
+        }
+
+        static DefaultComboBox()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(DefaultComboBox), new FrameworkPropertyMetadata(typeof(DefaultComboBox)));
+        }
+    }
+    public class ExtraSmallComboBox : DefaultComboBox
     {
         public ExtraSmallComboBox()
         {
-            HorizontalAlignment = HorizontalAlignment.Left;
-            Margin = new Thickness(5, 0, 5, 5);
             Width = 50;
             Height = 25;
-            Padding = new Thickness(5, 5, 5, 5);
         }
 
         static ExtraSmallComboBox()
@@ -25,15 +31,12 @@ namespace MVVMFramework.Controls
         }
     }
 
-    public class SmallComboBox : ComboBox
+    public class SmallComboBox : DefaultComboBox
     {
         public SmallComboBox()
         {
-            HorizontalAlignment = HorizontalAlignment.Left;
-            Margin = new Thickness(5, 0, 5, 5);
             Width = 75;
             Height = 25;
-            Padding = new Thickness(5, 5, 5, 5);
         }
 
         static SmallComboBox()
@@ -42,15 +45,12 @@ namespace MVVMFramework.Controls
         }
     }
 
-    public class MediumComboBox : ComboBox
+    public class MediumComboBox : DefaultComboBox
     {
         public MediumComboBox()
         {
-            HorizontalAlignment = HorizontalAlignment.Left;
-            Margin = new Thickness(5, 0, 5, 5);
             Width = 100;
             Height = 25;
-            Padding = new Thickness(5, 5, 5, 5);
         }
 
         static MediumComboBox()
@@ -59,15 +59,12 @@ namespace MVVMFramework.Controls
         }
     }
 
-    public class LargeComboBox : ComboBox
+    public class LargeComboBox : DefaultComboBox
     {
         public LargeComboBox()
         {
-            HorizontalAlignment = HorizontalAlignment.Left;
-            Margin = new Thickness(5, 0, 5, 5);
             Width = 125;
             Height = 25;
-            Padding = new Thickness(5, 5, 5, 5);
         }
 
         static LargeComboBox()
@@ -76,15 +73,12 @@ namespace MVVMFramework.Controls
         }
     }
 
-    public class ExtraLargeComboBox : ComboBox
+    public class ExtraLargeComboBox : DefaultComboBox
     {
         public ExtraLargeComboBox()
         {
-            HorizontalAlignment = HorizontalAlignment.Left;
-            Margin = new Thickness(5, 0, 5, 5);
             Width = 150;
             Height = 25;
-            Padding = new Thickness(5, 5, 5, 5);
         }
 
         static ExtraLargeComboBox()

@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CancelLabel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ChangingLabel" xml:space="preserve">
+    <value>Changing video speed...</value>
+  </data>
+  <data name="CombineSectionsQuestion" xml:space="preserve">
+    <value>Combine sections into one video?</value>
+  </data>
+  <data name="CombiningSectionsIntoOneLabel" xml:space="preserve">
+    <value>Combining sections into one video...</value>
+  </data>
+  <data name="CombiningSectionsLabel" xml:space="preserve">
+    <value>Combining sections...</value>
+  </data>
+  <data name="ConfirmationLabel" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="Converter" xml:space="preserve">
+    <value>Converter</value>
+  </data>
+  <data name="ConvertingLabel" xml:space="preserve">
+    <value>Converting video...</value>
+  </data>
+  <data name="ConvertLabel" xml:space="preserve">
+    <value>Convert</value>
+  </data>
+  <data name="DeleteSectionConfirm" xml:space="preserve">
+    <value>Do you want to delete this section?</value>
+  </data>
+  <data name="EndTimeAfterStartTime" xml:space="preserve">
+    <value>End time must be after the start time. Please select the start time again.</value>
+  </data>
+  <data name="EndTimeLabel" xml:space="preserve">
+    <value>End time</value>
+  </data>
+  <data name="ErrorLabel" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ErrorOccurred" xml:space="preserve">
+    <value>An error has occurred. Please close and reopen the program. Check your task manager and make sure any remaining "ffmpeg.exe" tasks are ended.</value>
+  </data>
+  <data name="FlipLabel" xml:space="preserve">
+    <value>Flip</value>
+  </data>
+  <data name="FormatLabel" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="InformationLabel" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="MergeLabel" xml:space="preserve">
+    <value>Merge</value>
+  </data>
+  <data name="Merger" xml:space="preserve">
+    <value>Merger</value>
+  </data>
+  <data name="MergingLabel" xml:space="preserve">
+    <value>Merging videos...</value>
+  </data>
+  <data name="MoveDownLabel" xml:space="preserve">
+    <value>Move down</value>
+  </data>
+  <data name="MoveUpLabel" xml:space="preserve">
+    <value>Move up</value>
+  </data>
+  <data name="NoFileSelected" xml:space="preserve">
+    <value>No file selected.</value>
+  </data>
+  <data name="OperationCancelled" xml:space="preserve">
+    <value>Operation cancelled.</value>
+  </data>
+  <data name="OutputFolderLabel" xml:space="preserve">
+    <value>Select output folder</value>
+  </data>
+  <data name="OutputFormatLabel" xml:space="preserve">
+    <value>Output to a different format?</value>
+  </data>
+  <data name="PauseLabel" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="PlayLabel" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="RamUsageLabel" xml:space="preserve">
+    <value>RAM usage too high:</value>
+  </data>
+  <data name="ReEncodeComment" xml:space="preserve">
+    <value>*Re-encoding is more time-consuming, but the start and end times will be more accurate and it will prevent any black frames at the beginning and end of the clips.</value>
+  </data>
+  <data name="ReEncodeQuestion" xml:space="preserve">
+    <value>Re-encode video?*</value>
+  </data>
+  <data name="RemoveLabel" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="ReverseLabel" xml:space="preserve">
+    <value>Reverse</value>
+  </data>
+  <data name="Reverser" xml:space="preserve">
+    <value>Reverser</value>
+  </data>
+  <data name="ReverseVideoMessage" xml:space="preserve">
+    <value>Reversing a video uses a lot of computer resources and can be time consuming. If you are going to reverse a video, make sure of the following:
+  1) It is best to not have other big programs running.
+  2) Video files should not exceed 1 minute.
+Are you sure you want to continue?</value>
+  </data>
+  <data name="ReversingSectionsLabel" xml:space="preserve">
+    <value>Reversing sections...</value>
+  </data>
+  <data name="RotateLabel" xml:space="preserve">
+    <value>Rotate</value>
+  </data>
+  <data name="SeekBackLabel" xml:space="preserve">
+    <value>Back (5 sec.)</value>
+  </data>
+  <data name="SeekForwardLabel" xml:space="preserve">
+    <value>Forward (5 sec.)</value>
+  </data>
+  <data name="SelectFileLabel" xml:space="preserve">
+    <value>Click to select a file...</value>
+  </data>
+  <data name="SpeedChanger" xml:space="preserve">
+    <value>Change Speed</value>
+  </data>
+  <data name="SplitLabel" xml:space="preserve">
+    <value>Split</value>
+  </data>
+  <data name="Splitter" xml:space="preserve">
+    <value>Splitter</value>
+  </data>
+  <data name="SplittingLabel" xml:space="preserve">
+    <value>Splitting video...</value>
+  </data>
+  <data name="StartTimeLabel" xml:space="preserve">
+    <value>Start time</value>
+  </data>
+  <data name="StopLabel" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="TrimmingSectionsLabel" xml:space="preserve">
+    <value>Trimming video into sections...</value>
+  </data>
+  <data name="VideoEditor" xml:space="preserve">
+    <value>Video Editor</value>
+  </data>
+  <data name="VideoSpeedLabel" xml:space="preserve">
+    <value>Video speed</value>
+  </data>
+  <data name="VideoSpeedSuccessfullyChanged" xml:space="preserve">
+    <value>Video speed successfully changed.</value>
+  </data>
+  <data name="VideoSuccessfullyConverted" xml:space="preserve">
+    <value>Video successfully converted.</value>
+  </data>
+  <data name="VideoSuccessfullyMerged" xml:space="preserve">
+    <value>Videos successfully merged.</value>
+  </data>
+  <data name="VideoSuccessfullyReversed" xml:space="preserve">
+    <value>Video successfully reversed.</value>
+  </data>
+  <data name="VideoSuccessfullySplit" xml:space="preserve">
+    <value>Video successfully split.</value>
+  </data>
+  <data name="VideoTooBigMessage" xml:space="preserve">
+    <value>Video file exceeds 1 minute. If you continue it is possible your computer will run out of memory during the process and freeze. Do you still want to continue?</value>
+  </data>
+  <data name="WarningLabel" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+</root>

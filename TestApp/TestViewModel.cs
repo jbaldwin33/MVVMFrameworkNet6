@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Forms;
+using MVVMFramework;
 using MVVMFramework.ViewModels;
 using MVVMFramework.ViewNavigator;
 using Application = System.Windows.Forms.Application;
+using Timer = System.Windows.Forms.Timer;
 
 namespace TestApp
 {
@@ -44,7 +47,8 @@ namespace TestApp
 
         private void ShowMessageExecute()
         {
-            ShowMessage(new MessageBoxEventArgs("test", "test", MessageBoxButton.OK, MessageBoxImage.Information));
+            
+            ShowMessage(new MessageBoxEventArgs(Translatables.Converter, MessageBoxEventArgs.MessageTypeEnum.Information, MessageBoxButton.OK, MessageBoxImage.Information));
         }
 
         public void wait(int milliseconds)

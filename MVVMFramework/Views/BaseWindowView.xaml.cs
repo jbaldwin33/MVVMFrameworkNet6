@@ -30,7 +30,7 @@ namespace MVVMFramework.Views
                     Navigator.Instance.CurrentViewModel = instance;
 
                 Navigator.Instance.ViewModels.Add(instance);
-                var button = new SmallButton
+                var button = new DefaultButton
                 {
                     CommandParameter = instance,
                     Content = name,

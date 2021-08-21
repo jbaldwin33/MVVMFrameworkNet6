@@ -17,8 +17,15 @@ namespace TestApp
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            //var window = new MainWindow(new TestViewModel());
-            var window = new BaseWindowView(new[] { (typeof(TestViewModel), "Test") });
+            var types = new[]
+            {
+                (typeof(TestViewModel), "Change Speed"),
+                (typeof(TestViewModel), "Change Speed"),
+                (typeof(TestViewModel), "Change Speed"),
+                (typeof(TestViewModel), "Change Speed"),
+                (typeof(TestViewModel), "Change Speed"),
+            };
+            var window = new BaseWindowView(types);
             window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             window.Show();
             base.OnStartup(e);

@@ -17,6 +17,8 @@ namespace MVVMFramework.Controls
             contentControl.SetValue(ContentControl.ContentProperty, new TemplateBindingExtension(ContentControl.ContentProperty));
             contentControl.SetValue(FrameworkElement.HorizontalAlignmentProperty, new TemplateBindingExtension(FrameworkElement.HorizontalAlignmentProperty));
             contentControl.SetValue(FrameworkElement.VerticalAlignmentProperty, new TemplateBindingExtension(FrameworkElement.VerticalAlignmentProperty));
+            contentControl.SetValue(FrameworkElement.MarginProperty, new TemplateBindingExtension(Control.PaddingProperty));
+            contentControl.SetValue(Control.PaddingProperty, new TemplateBindingExtension(Control.PaddingProperty));
             border.AppendChild(contentControl);
             template.VisualTree = border;
             return template;

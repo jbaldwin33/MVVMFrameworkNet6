@@ -37,16 +37,22 @@ namespace MVVMFramework.ViewModels
 
     public class MessageBoxEventArgs : EventArgs
     {
+        public enum MessageTypeEnum
+        {
+            Information,
+            Warning,
+            Error
+        }
         public string Message { get; set; }
-        public string Caption { get; set; }
+        public MessageTypeEnum MessageType { get; set; }
         public MessageBoxButton Button { get; set; }
         public MessageBoxImage Image { get; set; }
         public MessageBoxResult Result { get; set; }
 
-        public MessageBoxEventArgs(string message, string caption, MessageBoxButton button, MessageBoxImage image)
+        public MessageBoxEventArgs(string message, MessageTypeEnum type, MessageBoxButton button, MessageBoxImage image)
         {
             Message = message;
-            Caption = caption;
+            MessageType = type;
             Button = button;
             Image = image;
         }
