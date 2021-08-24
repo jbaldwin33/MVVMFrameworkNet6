@@ -61,6 +61,33 @@ namespace MVVMFramework {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Chapters.
+        /// </summary>
+        public static string AddChapter {
+            get {
+                return ResourceManager.GetString("AddChapter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add chapters to video?.
+        /// </summary>
+        public static string AddChaptersComment {
+            get {
+                return ResourceManager.GetString("AddChaptersComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add chapters markers to video instead of splitting?.
+        /// </summary>
+        public static string AddChaptersMessage {
+            get {
+                return ResourceManager.GetString("AddChaptersMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string CancelLabel {
@@ -75,6 +102,15 @@ namespace MVVMFramework {
         public static string ChangingLabel {
             get {
                 return ResourceManager.GetString("ChangingLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chapters markers successfully added!.
+        /// </summary>
+        public static string ChaptersSuccessfullyAdded {
+            get {
+                return ResourceManager.GetString("ChaptersSuccessfullyAdded", resourceCulture);
             }
         }
         
@@ -102,6 +138,15 @@ namespace MVVMFramework {
         public static string CombiningSectionsLabel {
             get {
                 return ResourceManager.GetString("CombiningSectionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string Confirm {
+            get {
+                return ResourceManager.GetString("Confirm", resourceCulture);
             }
         }
         
@@ -205,11 +250,29 @@ namespace MVVMFramework {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Getting metadata....
+        /// </summary>
+        public static string GettingMetadataMessage {
+            get {
+                return ResourceManager.GetString("GettingMetadataMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Information.
         /// </summary>
         public static string InformationLabel {
             get {
                 return ResourceManager.GetString("InformationLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is not a title for every section. Click on the red sections to double check the title names..
+        /// </summary>
+        public static string InsufficientTitles {
+            get {
+                return ResourceManager.GetString("InsufficientTitles", resourceCulture);
             }
         }
         
@@ -424,6 +487,15 @@ namespace MVVMFramework {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Setting metadata....
+        /// </summary>
+        public static string SettingMetadataMessage {
+            get {
+                return ResourceManager.GetString("SettingMetadataMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Speed.
         /// </summary>
         public static string SpeedChanger {
@@ -505,7 +577,7 @@ namespace MVVMFramework {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Video speed successfully changed..
+        ///   Looks up a localized string similar to Video speed successfully changed!.
         /// </summary>
         public static string VideoSpeedSuccessfullyChanged {
             get {
@@ -514,7 +586,7 @@ namespace MVVMFramework {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Video successfully converted..
+        ///   Looks up a localized string similar to Video successfully converted!.
         /// </summary>
         public static string VideoSuccessfullyConverted {
             get {
@@ -523,7 +595,7 @@ namespace MVVMFramework {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Videos successfully merged..
+        ///   Looks up a localized string similar to Videos successfully merged!.
         /// </summary>
         public static string VideoSuccessfullyMerged {
             get {
@@ -532,7 +604,7 @@ namespace MVVMFramework {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Video successfully reversed..
+        ///   Looks up a localized string similar to Video successfully reversed!.
         /// </summary>
         public static string VideoSuccessfullyReversed {
             get {
@@ -541,7 +613,7 @@ namespace MVVMFramework {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Video successfully split..
+        ///   Looks up a localized string similar to Video successfully split!.
         /// </summary>
         public static string VideoSuccessfullySplit {
             get {

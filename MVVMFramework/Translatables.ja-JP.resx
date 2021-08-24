@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddChapter" xml:space="preserve">
+    <value>チャプターをつける</value>
+  </data>
+  <data name="AddChaptersComment" xml:space="preserve">
+    <value>チャプターをつけますか？</value>
+  </data>
+  <data name="AddChaptersMessage" xml:space="preserve">
+    <value>スプリットかわりにチャプターマーカーを入れますか？</value>
+  </data>
   <data name="CancelLabel" xml:space="preserve">
     <value>キャンセル</value>
   </data>
   <data name="ChangingLabel" xml:space="preserve">
     <value>速度を変えています。。。</value>
+  </data>
+  <data name="ChaptersSuccessfullyAdded" xml:space="preserve">
+    <value>チャプターマーカーを入れました！</value>
   </data>
   <data name="CombineSectionsQuestion" xml:space="preserve">
     <value>セクションを一つの動画にしていますか？</value>
@@ -131,6 +143,9 @@
   </data>
   <data name="CombiningSectionsLabel" xml:space="preserve">
     <value>セクションをマージしています。。。</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>決定</value>
   </data>
   <data name="ConfirmationLabel" xml:space="preserve">
     <value>確認</value>
@@ -165,8 +180,14 @@
   <data name="FormatLabel" xml:space="preserve">
     <value>フォーマット</value>
   </data>
+  <data name="GettingMetadataMessage" xml:space="preserve">
+    <value>メタデータをとっています。。。</value>
+  </data>
   <data name="InformationLabel" xml:space="preserve">
     <value>報告</value>
+  </data>
+  <data name="InsufficientTitles" xml:space="preserve">
+    <value>タイトル名が足りないです。赤い部分をクリックして、確認してください。</value>
   </data>
   <data name="MergeLabel" xml:space="preserve">
     <value>マージ</value>
@@ -240,6 +261,9 @@
   <data name="SelectFileLabel" xml:space="preserve">
     <value>ファイルを選ぶ</value>
   </data>
+  <data name="SettingMetadataMessage" xml:space="preserve">
+    <value>メタデータをセットしています。。。</value>
+  </data>
   <data name="SpeedChanger" xml:space="preserve">
     <value>再生速度変える</value>
   </data>
@@ -268,19 +292,19 @@
     <value>動画の速度</value>
   </data>
   <data name="VideoSpeedSuccessfullyChanged" xml:space="preserve">
-    <value>速度が変えられました。</value>
+    <value>速度を変えました！</value>
   </data>
   <data name="VideoSuccessfullyConverted" xml:space="preserve">
-    <value>動画がコンバートされました。</value>
+    <value>動画をコンバートしました！</value>
   </data>
   <data name="VideoSuccessfullyMerged" xml:space="preserve">
-    <value>動画がマージされました。</value>
+    <value>動画をマージしました！</value>
   </data>
   <data name="VideoSuccessfullyReversed" xml:space="preserve">
-    <value>動画がリバースされました。</value>
+    <value>動画をリバースしました！</value>
   </data>
   <data name="VideoSuccessfullySplit" xml:space="preserve">
-    <value>動画がスプリットされました。</value>
+    <value>動画をスプリットしました！</value>
   </data>
   <data name="VideoTooBigMessage" xml:space="preserve">
     <value>動画ファイルの長さは1分いじょうです。進んだら、RAMを使いすぎて、コンピュータが停止する可能性は高いです。それでも進みますか？</value>

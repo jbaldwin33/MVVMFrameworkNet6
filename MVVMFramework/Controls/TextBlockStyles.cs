@@ -13,6 +13,7 @@ namespace MVVMFramework.Controls
     {
         public DefaultTextBlock()
         {
+            TextAlignment = TextAlignment.Center;
             HorizontalAlignment = HorizontalAlignment.Center;
             Margin = new Thickness(10, 0, 10, 10);
             Padding = new Thickness(5);

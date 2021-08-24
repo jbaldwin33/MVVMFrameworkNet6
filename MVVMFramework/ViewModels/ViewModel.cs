@@ -55,6 +55,7 @@ namespace MVVMFramework.ViewModels
         public enum MessageTypeEnum
         {
             Information,
+            Question,
             Warning,
             Error
         }
