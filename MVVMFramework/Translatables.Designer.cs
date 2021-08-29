@@ -70,16 +70,7 @@ namespace MVVMFramework {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add chapters to video?.
-        /// </summary>
-        public static string AddChaptersComment {
-            get {
-                return ResourceManager.GetString("AddChaptersComment", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Add chapters markers to video instead of splitting?.
+        ///   Looks up a localized string similar to Add chapter markers to video instead of splitting?.
         /// </summary>
         public static string AddChaptersMessage {
             get {
@@ -102,6 +93,24 @@ namespace MVVMFramework {
         public static string ChangingLabel {
             get {
                 return ResourceManager.GetString("ChangingLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Try again by importing the chapter marker file located at {0}..
+        /// </summary>
+        public static string ChapterAdderTryAgain {
+            get {
+                return ResourceManager.GetString("ChapterAdderTryAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chapter file should be in the following format:.
+        /// </summary>
+        public static string ChapterFileFormatMessage {
+            get {
+                return ResourceManager.GetString("ChapterFileFormatMessage", resourceCulture);
             }
         }
         
@@ -142,6 +151,15 @@ namespace MVVMFramework {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Complete.
+        /// </summary>
+        public static string CompleteLabel {
+            get {
+                return ResourceManager.GetString("CompleteLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm.
         /// </summary>
         public static string Confirm {
@@ -165,6 +183,15 @@ namespace MVVMFramework {
         public static string Converter {
             get {
                 return ResourceManager.GetString("Converter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Convert video format.
+        /// </summary>
+        public static string ConvertFormatLabel {
+            get {
+                return ResourceManager.GetString("ConvertFormatLabel", resourceCulture);
             }
         }
         
@@ -259,6 +286,15 @@ namespace MVVMFramework {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Import Chapter File.
+        /// </summary>
+        public static string ImportLabel {
+            get {
+                return ResourceManager.GetString("ImportLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Information.
         /// </summary>
         public static string InformationLabel {
@@ -349,11 +385,20 @@ namespace MVVMFramework {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Output to a different format?.
+        ///   Looks up a localized string similar to Output format.
         /// </summary>
         public static string OutputFormatLabel {
             get {
                 return ResourceManager.GetString("OutputFormatLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output to a different format?.
+        /// </summary>
+        public static string OutputFormatQuestion {
+            get {
+                return ResourceManager.GetString("OutputFormatQuestion", resourceCulture);
             }
         }
         
@@ -376,11 +421,38 @@ namespace MVVMFramework {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RAM usage too high:.
+        ///   Looks up a localized string similar to RAM usage exceeds {0}%..
         /// </summary>
         public static string RamUsageLabel {
             get {
                 return ResourceManager.GetString("RamUsageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reduce Size.
+        /// </summary>
+        public static string ReduceSize {
+            get {
+                return ResourceManager.GetString("ReduceSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reduce video size.
+        /// </summary>
+        public static string ReduceVideoSizeLabel {
+            get {
+                return ResourceManager.GetString("ReduceVideoSizeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reducing video size....
+        /// </summary>
+        public static string ReducingSizeLabel {
+            get {
+                return ResourceManager.GetString("ReducingSizeLabel", resourceCulture);
             }
         }
         
@@ -496,6 +568,24 @@ namespace MVVMFramework {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Size Reducer.
+        /// </summary>
+        public static string SizeReducer {
+            get {
+                return ResourceManager.GetString("SizeReducer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size successfully reduced!.
+        /// </summary>
+        public static string SizeSuccessfullyReduced {
+            get {
+                return ResourceManager.GetString("SizeSuccessfullyReduced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Speed.
         /// </summary>
         public static string SpeedChanger {
@@ -555,6 +645,15 @@ namespace MVVMFramework {
         public static string TrimmingSectionsLabel {
             get {
                 return ResourceManager.GetString("TrimmingSectionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Video {0} of {1}.
+        /// </summary>
+        public static string VideoCounterLabel {
+            get {
+                return ResourceManager.GetString("VideoCounterLabel", resourceCulture);
             }
         }
         

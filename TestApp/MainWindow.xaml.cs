@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MVVMFramework.Controls;
 using MVVMFramework.ViewModels;
 using MVVMFramework.ViewNavigator;
 using MVVMFramework.Views;
@@ -38,5 +39,6 @@ namespace TestApp
         {
             MessageBox.Show("message");
         }
+        
     }
 }

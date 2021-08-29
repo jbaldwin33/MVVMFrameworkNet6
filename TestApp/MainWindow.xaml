@@ -9,13 +9,12 @@
         mc:Ignorable="d"
         Height="450" Width="800">
   <Grid>
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+    <controls:DefaultStackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
       <controls:ExtraSmallButton Content="xtra"/>
       <controls:SmallButton Content="small"/>
       <controls:MediumButton Content="medium"/>
       <controls:LargeButton Content="large"/>
       <controls:ExtraLargeButton Content="xtralarge" Command="{Binding ShowMessageCommand}"/>
-      <controls:DefaultButton Content="Rsd asd asd asd asd asdg" />
-    </StackPanel>
+    </controls:DefaultStackPanel>
   </Grid>
 </views:ViewBaseControl>

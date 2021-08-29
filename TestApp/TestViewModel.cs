@@ -48,7 +48,7 @@ namespace TestApp
         private void ShowMessageExecute()
         {
             
-            ShowMessage(new MessageBoxEventArgs(Translatables.Converter, MessageBoxEventArgs.MessageTypeEnum.Information, MessageBoxButton.OK, MessageBoxImage.Information));
+            ShowMessage(new MessageBoxEventArgs(string.Format("message", "test"), MessageBoxEventArgs.MessageTypeEnum.Information, MessageBoxButton.OK, MessageBoxImage.Information));
         }
 
         public void wait(int milliseconds)

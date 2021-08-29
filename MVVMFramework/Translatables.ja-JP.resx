@@ -120,9 +120,6 @@
   <data name="AddChapter" xml:space="preserve">
     <value>チャプターをつける</value>
   </data>
-  <data name="AddChaptersComment" xml:space="preserve">
-    <value>チャプターをつけますか？</value>
-  </data>
   <data name="AddChaptersMessage" xml:space="preserve">
     <value>スプリットかわりにチャプターマーカーを入れますか？</value>
   </data>
@@ -131,6 +128,12 @@
   </data>
   <data name="ChangingLabel" xml:space="preserve">
     <value>速度を変えています。。。</value>
+  </data>
+  <data name="ChapterAdderTryAgain" xml:space="preserve">
+    <value>{0}のファイルをインポートして、再試行してください。</value>
+  </data>
+  <data name="ChapterFileFormatMessage" xml:space="preserve">
+    <value>チャプターファイルがこのように書いているのを確認してください：</value>
   </data>
   <data name="ChaptersSuccessfullyAdded" xml:space="preserve">
     <value>チャプターマーカーを入れました！</value>
@@ -144,6 +147,9 @@
   <data name="CombiningSectionsLabel" xml:space="preserve">
     <value>セクションをマージしています。。。</value>
   </data>
+  <data name="CompleteLabel" xml:space="preserve">
+    <value>完成</value>
+  </data>
   <data name="Confirm" xml:space="preserve">
     <value>決定</value>
   </data>
@@ -152,6 +158,9 @@
   </data>
   <data name="Converter" xml:space="preserve">
     <value>コンバート</value>
+  </data>
+  <data name="ConvertFormatLabel" xml:space="preserve">
+    <value>動画のフォーマットを変える</value>
   </data>
   <data name="ConvertingLabel" xml:space="preserve">
     <value>コンバートしています。。。</value>
@@ -182,6 +191,9 @@
   </data>
   <data name="GettingMetadataMessage" xml:space="preserve">
     <value>メタデータをとっています。。。</value>
+  </data>
+  <data name="ImportLabel" xml:space="preserve">
+    <value>チャプターファイルインポート</value>
   </data>
   <data name="InformationLabel" xml:space="preserve">
     <value>報告</value>
@@ -214,6 +226,9 @@
     <value>フォルダを選ぶ</value>
   </data>
   <data name="OutputFormatLabel" xml:space="preserve">
+    <value>フォーマット</value>
+  </data>
+  <data name="OutputFormatQuestion" xml:space="preserve">
     <value>別のフォーマットにしますか？</value>
   </data>
   <data name="PauseLabel" xml:space="preserve">
@@ -223,7 +238,16 @@
     <value>再生</value>
   </data>
   <data name="RamUsageLabel" xml:space="preserve">
-    <value>使っているRAMが高すぎる:</value>
+    <value>使っているRAMが{0}%を超えています。</value>
+  </data>
+  <data name="ReduceSize" xml:space="preserve">
+    <value>サイズを削る</value>
+  </data>
+  <data name="ReduceVideoSizeLabel" xml:space="preserve">
+    <value>動画のサイズを削る</value>
+  </data>
+  <data name="ReducingSizeLabel" xml:space="preserve">
+    <value>サイズを削っています。。。</value>
   </data>
   <data name="ReEncodeComment" xml:space="preserve">
     <value>*Re-encodeしたらもと時間がかかるが、開始時間と終了時間はもっと的確になり、動画の最初と最後に黒いフレームがなくなる。</value>
@@ -264,6 +288,12 @@
   <data name="SettingMetadataMessage" xml:space="preserve">
     <value>メタデータをセットしています。。。</value>
   </data>
+  <data name="SizeReducer" xml:space="preserve">
+    <value>サイズを削る</value>
+  </data>
+  <data name="SizeSuccessfullyReduced" xml:space="preserve">
+    <value>サイズを削りました！</value>
+  </data>
   <data name="SpeedChanger" xml:space="preserve">
     <value>再生速度変える</value>
   </data>
@@ -284,6 +314,9 @@
   </data>
   <data name="TrimmingSectionsLabel" xml:space="preserve">
     <value>動画をセクションにしています。。。</value>
+  </data>
+  <data name="VideoCounterLabel" xml:space="preserve">
+    <value>{1}個の{0}個目</value>
   </data>
   <data name="VideoEditor" xml:space="preserve">
     <value>Video Editor</value>

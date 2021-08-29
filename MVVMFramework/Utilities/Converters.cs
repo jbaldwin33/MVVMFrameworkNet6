@@ -20,6 +20,7 @@ namespace MVVMFramework.Utilities
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
+            return value != null && (Visibility)value == Visibility.Collapsed;
         }
     }
 
@@ -28,7 +29,7 @@ namespace MVVMFramework.Utilities
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (targetType != typeof(bool))
+            if (targetType != typeof(bool) && targetType != typeof(bool?))
                 throw new InvalidOperationException("The target must be a boolean");
 
             return !(bool)value;
@@ -36,7 +37,10 @@ namespace MVVMFramework.Utilities
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotSupportedException();
+            if (targetType != typeof(bool) && targetType != typeof(bool?))
+                throw new InvalidOperationException("The target must be a boolean");
+
+            return !(bool)value;
         }
     }
 }

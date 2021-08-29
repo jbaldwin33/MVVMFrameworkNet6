@@ -120,17 +120,20 @@
   <data name="AddChapter" xml:space="preserve">
     <value>Add Chapters</value>
   </data>
-  <data name="AddChaptersComment" xml:space="preserve">
-    <value>Add chapters to video?</value>
-  </data>
   <data name="AddChaptersMessage" xml:space="preserve">
-    <value>Add chapters markers to video instead of splitting?</value>
+    <value>Add chapter markers to video instead of splitting?</value>
   </data>
   <data name="CancelLabel" xml:space="preserve">
     <value>Cancel</value>
   </data>
   <data name="ChangingLabel" xml:space="preserve">
     <value>Changing video speed...</value>
+  </data>
+  <data name="ChapterAdderTryAgain" xml:space="preserve">
+    <value>Try again by importing the chapter marker file located at {0}.</value>
+  </data>
+  <data name="ChapterFileFormatMessage" xml:space="preserve">
+    <value>Chapter file should be in the following format:</value>
   </data>
   <data name="ChaptersSuccessfullyAdded" xml:space="preserve">
     <value>Chapters markers successfully added!</value>
@@ -144,6 +147,9 @@
   <data name="CombiningSectionsLabel" xml:space="preserve">
     <value>Combining sections...</value>
   </data>
+  <data name="CompleteLabel" xml:space="preserve">
+    <value>Complete</value>
+  </data>
   <data name="Confirm" xml:space="preserve">
     <value>Confirm</value>
   </data>
@@ -152,6 +158,9 @@
   </data>
   <data name="Converter" xml:space="preserve">
     <value>Converter</value>
+  </data>
+  <data name="ConvertFormatLabel" xml:space="preserve">
+    <value>Convert video format</value>
   </data>
   <data name="ConvertingLabel" xml:space="preserve">
     <value>Converting video...</value>
@@ -182,6 +191,9 @@
   </data>
   <data name="GettingMetadataMessage" xml:space="preserve">
     <value>Getting metadata...</value>
+  </data>
+  <data name="ImportLabel" xml:space="preserve">
+    <value>Import Chapter File</value>
   </data>
   <data name="InformationLabel" xml:space="preserve">
     <value>Information</value>
@@ -214,6 +226,9 @@
     <value>Select output folder</value>
   </data>
   <data name="OutputFormatLabel" xml:space="preserve">
+    <value>Output format</value>
+  </data>
+  <data name="OutputFormatQuestion" xml:space="preserve">
     <value>Output to a different format?</value>
   </data>
   <data name="PauseLabel" xml:space="preserve">
@@ -223,7 +238,16 @@
     <value>Play</value>
   </data>
   <data name="RamUsageLabel" xml:space="preserve">
-    <value>RAM usage too high:</value>
+    <value>RAM usage exceeds {0}%.</value>
+  </data>
+  <data name="ReduceSize" xml:space="preserve">
+    <value>Reduce Size</value>
+  </data>
+  <data name="ReduceVideoSizeLabel" xml:space="preserve">
+    <value>Reduce video size</value>
+  </data>
+  <data name="ReducingSizeLabel" xml:space="preserve">
+    <value>Reducing video size...</value>
   </data>
   <data name="ReEncodeComment" xml:space="preserve">
     <value>*Re-encoding is more time-consuming, but the start and end times will be more accurate and it will prevent any black frames at the beginning and end of the clips.</value>
@@ -264,6 +288,12 @@ Are you sure you want to continue?</value>
   <data name="SettingMetadataMessage" xml:space="preserve">
     <value>Setting metadata...</value>
   </data>
+  <data name="SizeReducer" xml:space="preserve">
+    <value>Size Reducer</value>
+  </data>
+  <data name="SizeSuccessfullyReduced" xml:space="preserve">
+    <value>Size successfully reduced!</value>
+  </data>
   <data name="SpeedChanger" xml:space="preserve">
     <value>Change Speed</value>
   </data>
@@ -284,6 +314,9 @@ Are you sure you want to continue?</value>
   </data>
   <data name="TrimmingSectionsLabel" xml:space="preserve">
     <value>Trimming video into sections...</value>
+  </data>
+  <data name="VideoCounterLabel" xml:space="preserve">
+    <value>Video {0} of {1}</value>
   </data>
   <data name="VideoEditor" xml:space="preserve">
     <value>Video Editor</value>
