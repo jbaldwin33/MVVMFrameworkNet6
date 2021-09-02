@@ -10,6 +10,7 @@ using System.Windows;
 using MVVMFramework;
 using MVVMFramework.ViewModels;
 using MVVMFramework.ViewNavigator;
+using TestApp.ViewModels;
 using Application = System.Windows.Forms.Application;
 using Timer = System.Windows.Forms.Timer;
 
@@ -34,6 +35,13 @@ namespace TestApp
             set => SetProperty(ref myBool, value);
         }
 
+        private ProgressBarViewModel progressBarViewModel;
+        public ProgressBarViewModel ProgressBarViewModel
+        {
+            get => progressBarViewModel;
+            set => SetProperty(ref progressBarViewModel, value);
+        }
+
         public TestViewModel()
         {
             MyBool = false;
@@ -47,8 +55,9 @@ namespace TestApp
 
         private void ShowMessageExecute()
         {
-            
-            ShowMessage(new MessageBoxEventArgs(string.Format("message", "test"), MessageBoxEventArgs.MessageTypeEnum.Information, MessageBoxButton.OK, MessageBoxImage.Information));
+
+            ProgressBarViewModel = new ProgressBarViewModel(15);
+            Navigator.Instance.OpenChildWindow.Execute(ProgressBarViewModel);
         }
 
         public void wait(int milliseconds)

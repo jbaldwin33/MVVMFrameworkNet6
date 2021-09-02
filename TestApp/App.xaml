@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:TestApp"
              xmlns:views="clr-namespace:TestApp.Views"
-             xmlns:viewModels="clr-namespace:MVVMFramework.ViewModels"
-             xmlns:style="clr-namespace:MVVMFramework.Controls;assembly=MVVMFramework">
+             xmlns:style="clr-namespace:MVVMFramework.Controls;assembly=MVVMFramework"
+             xmlns:viewModels1="clr-namespace:TestApp.ViewModels">
   <Application.Resources>
-
     <Style TargetType="Rectangle"/>
-    <DataTemplate DataType="{x:Type viewModels:ProgressBarViewModel}">
+    <DataTemplate DataType="{x:Type viewModels1:ProgressBarViewModel}">
       <views:ProgressBarView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type local:TestViewModel}">

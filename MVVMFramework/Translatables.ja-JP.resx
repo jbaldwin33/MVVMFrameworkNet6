@@ -121,7 +121,7 @@
     <value>チャプターをつける</value>
   </data>
   <data name="AddChaptersMessage" xml:space="preserve">
-    <value>スプリットかわりにチャプターマーカーを入れますか？</value>
+    <value>チャプターマーカーを入れますか？</value>
   </data>
   <data name="CancelLabel" xml:space="preserve">
     <value>キャンセル</value>
@@ -267,7 +267,6 @@
   <data name="ReverseVideoMessage" xml:space="preserve">
     <value>動画をリバースをするにはたくさんRAMとCPUが必要で、時間がかかります。リバースするなら下記の点を確認してください：
   1) 他の大きいプログラムを停止する。
-  2) 動画ファイルの長さは1分以内にする。
 進みますか？</value>
   </data>
   <data name="ReversingSectionsLabel" xml:space="preserve">

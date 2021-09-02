@@ -5,6 +5,34 @@ using Brushes = System.Windows.Media.Brushes;
 
 namespace MVVMFramework.Controls
 {
+    public partial class WindowStyle : ResourceDictionary
+    {
+        public WindowStyle()
+        {
+            InitializeComponent();
+        }
+
+        private void CloseClick(object sender, RoutedEventArgs e)
+        {
+            var window = (Window)((FrameworkElement)sender).TemplatedParent;
+            window.Close();
+        }
+
+        private void MaximizeRestoreClick(object sender, RoutedEventArgs e)
+        {
+            var window = (Window)((FrameworkElement)sender).TemplatedParent;
+            if (window.WindowState == System.Windows.WindowState.Normal)
+                window.WindowState = System.Windows.WindowState.Maximized;
+            else
+                window.WindowState = System.Windows.WindowState.Normal;
+        }
+
+        private void MinimizeClick(object sender, RoutedEventArgs e)
+        {
+            var window = (Window)((FrameworkElement)sender).TemplatedParent;
+            window.WindowState = System.Windows.WindowState.Minimized;
+        }
+    }
     public class ControlUtilities
     {
         internal static ControlTemplate SetTemplateContent<T>() where T : Control
@@ -38,7 +66,7 @@ namespace MVVMFramework.Controls
         {
             return new Style
             {
-                Triggers = 
+                Triggers =
                 {
                     CreateTrigger(UIElement.IsMouseOverProperty, true, new[] { CreateSetter(Control.BackgroundProperty, Brushes.CadetBlue) }),
                     CreateTrigger(UIElement.IsMouseOverProperty, false, new[] { CreateSetter(Control.BorderBrushProperty, Brushes.Transparent), CreateSetter(Control.BackgroundProperty, Brushes.DarkGray) }),

@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using MVVMFramework.Controls;
 using MVVMFramework.Utilities;
@@ -14,7 +13,7 @@ namespace MVVMFramework.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class BaseWindowView : ViewBase
+    public partial class BaseWindowView : ViewBaseWindow
     {
         public BaseWindowView((Type, string)[] viewModelTypes) : base(new MainViewModel(Navigator.Instance))
         {

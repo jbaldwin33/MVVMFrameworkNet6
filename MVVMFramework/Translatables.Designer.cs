@@ -70,7 +70,7 @@ namespace MVVMFramework {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add chapter markers to video instead of splitting?.
+        ///   Looks up a localized string similar to Add chapter markers to video?.
         /// </summary>
         public static string AddChaptersMessage {
             get {
@@ -504,7 +504,6 @@ namespace MVVMFramework {
         /// <summary>
         ///   Looks up a localized string similar to Reversing a video uses a lot of computer resources and can be time consuming. If you are going to reverse a video, make sure of the following:
         ///  1) It is best to not have other big programs running.
-        ///  2) Video files should not exceed 1 minute.
         ///Are you sure you want to continue?.
         /// </summary>
         public static string ReverseVideoMessage {

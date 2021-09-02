@@ -43,7 +43,7 @@ namespace MVVMFramework.ViewNavigator
 
         public Navigator()
         {
-            
+
         }
 
         #region Properties
@@ -155,16 +155,19 @@ namespace MVVMFramework.ViewNavigator
 
         public void Execute(object parameter)
         {
-            navigator.ChildView = new PopupWindowView
+            Application.Current.Dispatcher.Invoke(() =>
             {
-                WindowStartupLocation = WindowStartupLocation.CenterOwner,
-                contentControl = { Content = parameter as ViewModel },
-                WindowStyle = WindowStyle.None
-            };
-            navigator.ChildViewModel = parameter as ViewModel;
-            navigator.SetChildViewShown(true);
-            navigator.ChildView.Owner = Application.Current.MainWindow;
-            navigator.ChildView.ShowDialog();
+                navigator.ChildView = new PopupWindowView
+                {
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                    contentControl = { Content = parameter as ViewModel },
+                    WindowStyle = WindowStyle.None
+                };
+                navigator.ChildViewModel = parameter as ViewModel;
+                navigator.SetChildViewShown(true);
+                navigator.ChildView.Owner = Application.Current.MainWindow;
+                navigator.ChildView.ShowDialog();
+            });
         }
     }
 
@@ -182,9 +185,12 @@ namespace MVVMFramework.ViewNavigator
 
         public void Execute(object parameter)
         {
-            navigator.ChildViewModel = null;
-            navigator.SetChildViewShown(false);
-            Application.Current.Dispatcher.Invoke(() => navigator.ChildView.Close());
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                navigator.ChildViewModel = null;
+                navigator.SetChildViewShown(false);
+                navigator.ChildView.Close();
+            });
         }
     }
 }

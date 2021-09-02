@@ -121,7 +121,7 @@
     <value>Add Chapters</value>
   </data>
   <data name="AddChaptersMessage" xml:space="preserve">
-    <value>Add chapter markers to video instead of splitting?</value>
+    <value>Add chapter markers to video?</value>
   </data>
   <data name="CancelLabel" xml:space="preserve">
     <value>Cancel</value>
@@ -267,7 +267,6 @@
   <data name="ReverseVideoMessage" xml:space="preserve">
     <value>Reversing a video uses a lot of computer resources and can be time consuming. If you are going to reverse a video, make sure of the following:
   1) It is best to not have other big programs running.
-  2) Video files should not exceed 1 minute.
 Are you sure you want to continue?</value>
   </data>
   <data name="ReversingSectionsLabel" xml:space="preserve">

@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TestApp.Views
+namespace TestApp
 {
     /// <summary>
-    /// Interaction logic for ProgressBarView.xaml
+    /// Interaction logic for NewWindow.xaml
     /// </summary>
-    public partial class ProgressBarView : UserControl
+    public partial class NewWindow : Window
     {
-        public ProgressBarView()
+        public NewWindow()
         {
             InitializeComponent();
         }

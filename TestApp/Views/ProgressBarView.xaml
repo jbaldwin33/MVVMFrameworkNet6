@@ -6,11 +6,27 @@
              xmlns:local="clr-namespace:TestApp.Views" xmlns:controls="clr-namespace:MVVMFramework.Controls;assembly=MVVMFramework"
              mc:Ignorable="d"
              d:DesignHeight="150" d:DesignWidth="450">
-    <Grid>
+  <Grid>
     <controls:DefaultStackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-      <Label Content="{Binding ProgressLabel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
-      <ProgressBar Margin="0,10,0,0" Value="{Binding ProgressValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Minimum="0" Maximum="100" Width="400" Height="20"/>
-      <Button Margin="0,10,0,0" Content="{Binding CancelLabel}" Command="{Binding CancelCommand}"/>
+      <Label Content="lasdlsdsa" HorizontalAlignment="Center"/>
+      <ScrollViewer CanContentScroll="True" HorizontalScrollBarVisibility="Auto" Height="100">
+        <ItemsControl ItemsSource="{Binding ProgressBarCollection}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Vertical"/>
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Orientation="Horizontal">
+                <controls:MediumTextBlock Text="asd"/>
+                <ProgressBar Margin="10,0,10,10" Value="50" Minimum="0" Maximum="100" Width="400" Height="20"/>
+              </StackPanel>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+      <controls:MediumButton Content="asdsad"/>
     </controls:DefaultStackPanel>
   </Grid>
 </UserControl>

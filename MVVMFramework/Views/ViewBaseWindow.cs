@@ -9,15 +9,16 @@ using MVVMFramework.ViewModels;
 
 namespace MVVMFramework.Views
 {
-    public abstract class ViewBase : Window
+    public abstract class ViewBaseWindow : Window
     {
-        public ViewBase(ViewModel viewModel)
+        public ViewBaseWindow(ViewModel viewModel)
         {
             DataContext = viewModel;
             Loaded += BeforeShow;
             ContentRendered += AfterShow;
             Closing += OnClosing;
             Closed += OnClosed;
+            Style = Resources["StandardStyle"] as Style;
         }
 
         protected virtual void BeforeShow(object sender, RoutedEventArgs e) => throw new NotImplementedException();

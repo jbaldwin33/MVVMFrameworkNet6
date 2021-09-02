@@ -99,7 +99,7 @@
     <Compile Include="Views\PopupWindowView.xaml.cs">
       <DependentUpon>PopupWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ViewBase.cs" />
+    <Compile Include="Views\ViewBaseWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\ControlStyles.xaml">
