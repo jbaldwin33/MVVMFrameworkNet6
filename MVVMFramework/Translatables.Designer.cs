@@ -223,6 +223,15 @@ namespace MVVMFramework {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Youtube Downloader.
+        /// </summary>
+        public static string Downloader {
+            get {
+                return ResourceManager.GetString("Downloader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to End time must be after the start time. Please select the start time again..
         /// </summary>
         public static string EndTimeAfterStartTime {
@@ -309,6 +318,15 @@ namespace MVVMFramework {
         public static string InsufficientTitles {
             get {
                 return ResourceManager.GetString("InsufficientTitles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jump to time.
+        /// </summary>
+        public static string JumpToTimeLabel {
+            get {
+                return ResourceManager.GetString("JumpToTimeLabel", resourceCulture);
             }
         }
         

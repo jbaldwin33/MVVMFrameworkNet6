@@ -47,9 +47,22 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
@@ -69,16 +82,10 @@
     <Compile Include="Controls\DefaultControlStyles.cs" />
     <Compile Include="Controls\TextBlockStyles.cs" />
     <Compile Include="Controls\TextBoxStyles.cs" />
-    <Compile Include="Translatables.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Translatables.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Translatables.ja-JP.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Translatables.ja-JP.resx</DependentUpon>
-    </Compile>
+    <Compile Include="Localization\LocalizationClass.cs" />
+    <Compile Include="Localization\Translatable.cs" />
+    <Compile Include="Localization\TranslatableClass.cs" />
+    <Compile Include="Localization\Translatables.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PopupWindowViewModel.cs" />
     <Compile Include="ViewNavigator\NavigationBar.xaml.cs">
@@ -120,21 +127,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="frameworkkey.snk" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Translatables.ja-JP.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Translatables.ja-JP.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Translatables.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Translatables.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y "$(OutputDir)MVVMFramework.dll" "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug"</PostBuildEvent>
+    <PostBuildEvent>xcopy /Y "$(OutputDir)MVVMFramework.dll" "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug"
+if not exist "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug\Localization" mkdir "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug\Localization"
+xcopy /Y/E "$(SolutionDir)\Localization\*" "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug\Localization"
+if not exist "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization" mkdir "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization"
+xcopy /Y/E "$(SolutionDir)\Localization\*" "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization"</PostBuildEvent>
   </PropertyGroup>
 </Project>

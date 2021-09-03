@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using MVVMFramework;
+using MVVMFramework.Localization;
 using MVVMFramework.ViewModels;
 using MVVMFramework.ViewNavigator;
 using TestApp.ViewModels;

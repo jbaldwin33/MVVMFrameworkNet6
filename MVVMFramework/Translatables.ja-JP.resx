@@ -171,6 +171,9 @@
   <data name="DeleteSectionConfirm" xml:space="preserve">
     <value>このセクション削除しますか？</value>
   </data>
+  <data name="Downloader" xml:space="preserve">
+    <value>Youtubeダウンローダー</value>
+  </data>
   <data name="EndTimeAfterStartTime" xml:space="preserve">
     <value>終了時間は開始時間の後にならなくていけない。また開始時間を選んでください。</value>
   </data>
@@ -200,6 +203,9 @@
   </data>
   <data name="InsufficientTitles" xml:space="preserve">
     <value>タイトル名が足りないです。赤い部分をクリックして、確認してください。</value>
+  </data>
+  <data name="JumpToTimeLabel" xml:space="preserve">
+    <value>時間に飛ぶ</value>
   </data>
   <data name="MergeLabel" xml:space="preserve">
     <value>マージ</value>
