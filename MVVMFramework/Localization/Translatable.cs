@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Linq;
 
 namespace MVVMFramework.Localization
 {
@@ -14,15 +6,6 @@ namespace MVVMFramework.Localization
     {
         private readonly object[] parameters;
         private readonly TranslatableClass localizationCache;
-
-        //static Translatable()
-        //{
-        //}
-
-        //protected Translatable()
-        //{
-        //    localizationCache.AddToLocalizationFile(this);
-        //}
         
         protected Translatable(params object[] args)
         {
@@ -32,11 +15,7 @@ namespace MVVMFramework.Localization
 
         protected abstract string GetDefaultTranslation();
 
-        public override string ToString()
-        {
-            var s = string.Format(GetTranslation(), parameters);
-            return s;
-        }
+        public override string ToString() => string.Format(GetTranslation(), parameters);
 
         public static implicit operator string(Translatable translatable) => translatable.ToString();
 
@@ -48,6 +27,5 @@ namespace MVVMFramework.Localization
                 translation = translatableElement.Items.First(x => int.Parse(x.LCID) == x.LCIDArray.First(lcid => lcid == localizationCache.CurrentLCID)).Text;
             return translation;
         }
-
     }
 }

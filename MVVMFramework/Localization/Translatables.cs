@@ -312,6 +312,13 @@ namespace MVVMFramework.Localization
         public AddChaptersMessageTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "Add chapter markers to video?";
     }
+
+    public class AddChapterTitleTranslatable : Translatable
+    {
+        public AddChapterTitleTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Add chapter title";
+    }
+
     public class PauseLabelTranslatable : Translatable
     {
         public PauseLabelTranslatable(params object[] parameters) : base(parameters) { }
@@ -392,5 +399,54 @@ namespace MVVMFramework.Localization
         public StartTimeLabelTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "Start time";
     }
+
+    public class DownloadLabelTranslatable : Translatable
+    {
+        public DownloadLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Download";
+    }
+
+    public class DownloadingLabelTranslatable : Translatable
+    {
+        public DownloadingLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Downloading...";
+    }
+
+    public class AddUrlLabelTranslatable : Translatable
+    {
+        public AddUrlLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Add URL";
+    }
+
+    public class VideoSuccessfullyDownloadedTranslatable : Translatable
+    {
+        public VideoSuccessfullyDownloadedTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Video successfully downloaded!";
+    }
+
+    public class IsPlaylistTranslatable : Translatable
+    {
+        public IsPlaylistTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Is this a playlist?";
+    }
+
+    public class EnterTitleTranslatable : Translatable
+    {
+        public EnterTitleTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Enter title...";
+    }
+
+    public class EnterUrlTranslatable : Translatable
+    {
+        public EnterUrlTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Enter URL...";
+    }
+
+    public class TextCannotBeEmptyTranslatable : Translatable
+    {
+        public TextCannotBeEmptyTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Text cannot be empty.";
+    }
+
 
 }
