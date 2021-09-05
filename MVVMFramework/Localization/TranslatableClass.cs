@@ -14,7 +14,17 @@ namespace MVVMFramework.Localization
         private static readonly Lazy<TranslatableClass> lazy = new Lazy<TranslatableClass>(() => new TranslatableClass());
         public static TranslatableClass Instance => lazy.Value;
         public LocalizationClass LocalizationFile;
-        public int CurrentLCID;
+        private CultureInfo currentCultureInfo;
+        public CultureInfo CurrentCultureInfo
+        {
+            get => currentCultureInfo;
+            set
+            {
+                currentCultureInfo = value;
+                CurrentLCID = value.LCID;
+            }
+        }
+        public int CurrentLCID { get; private set; }
         private static XmlSerializer _xmlSerializer;
         private static XmlSerializer xmlSerializer => _xmlSerializer ?? (_xmlSerializer = new XmlSerializer(typeof(LocalizationClass)));
         private static readonly string localizationPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Localization", "Localization.xml");
@@ -26,7 +36,7 @@ namespace MVVMFramework.Localization
 
             using (var reader = new StreamReader(localizationPath))
                 LocalizationFile = (LocalizationClass)xmlSerializer.Deserialize(reader);
-            CurrentLCID = CultureInfo.CurrentUICulture.LCID;
+            CurrentCultureInfo = CultureInfo.CurrentUICulture;
         }
 
         public void AddToLocalizationFile()

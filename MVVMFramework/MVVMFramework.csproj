@@ -138,6 +138,8 @@
 if not exist "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug\Localization" mkdir "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug\Localization"
 xcopy /Y/E "$(SolutionDir)\Localization\*" "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug\Localization"
 if not exist "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization" mkdir "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization"
-xcopy /Y/E "$(SolutionDir)\Localization\*" "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization"</PostBuildEvent>
+xcopy /Y/E "$(SolutionDir)\Localization\*" "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization"
+if not exist "$(SolutionDir)\TestApp\bin\Debug\Localization" mkdir "$(SolutionDir)\TestApp\bin\Debug\Localization"
+xcopy /Y/E "$(SolutionDir)\Localization\*" "$(SolutionDir)\TestApp\bin\Debug\Localization"</PostBuildEvent>
   </PropertyGroup>
 </Project>

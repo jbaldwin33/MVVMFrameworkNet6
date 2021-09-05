@@ -448,5 +448,9 @@ namespace MVVMFramework.Localization
         protected override string GetDefaultTranslation() => "Text cannot be empty.";
     }
 
-
+    public class ChapterAdderTranslatable : Translatable
+    {
+        public ChapterAdderTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Chapter Adder";
+    }
 }

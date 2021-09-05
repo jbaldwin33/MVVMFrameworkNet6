@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using MVVMFramework.ViewModels;
+using MVVMFramework.ViewNavigator;
 
 namespace MVVMFramework.Views
 {
@@ -37,6 +38,6 @@ namespace MVVMFramework.Views
         public ViewBaseControl() { }
 
         private void ViewModel_ShowMessageBoxEventHandler(object sender, MessageBoxEventArgs e) 
-            => e.Result = Application.Current.Dispatcher.Invoke(() => MessageBox.Show(Application.Current.MainWindow, e.Message, e.MessageType.ToString(), e.Button, e.Image));
+            => e.Result = Application.Current.Dispatcher.Invoke(() => MessageBox.Show(Navigator.Instance.ChildViewShown ? Navigator.Instance.ChildView : Application.Current.MainWindow, e.Message, e.MessageType.ToString(), e.Button, e.Image));
     }
 }
