@@ -80,7 +80,7 @@ namespace TestApp.ViewModels
         public ProgressViewModel(int index, int total)
         {
             ShowLabel = total != 1;
-            VideoIndexLabel = $"{string.Format(new VideoCounterLabelTranslatable(), index, total)}:";
+            VideoIndexLabel = $"{new VideoCounterLabelTranslatable(index, total)}:";
         }
 
         public void UpdateProgress(decimal progress) => ProgressValue = progress;

@@ -29,26 +29,12 @@ namespace TestApp
                 (typeof(TestViewModel), "Change Speed"),
                 (typeof(TestViewModel), new SplitterTranslatable()),
             };
-            var window = new BaseWindowView(types);
-            //var window = new NewWindow();
-            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            var window = new BaseWindowView(types)
+            {
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+            };
             window.Show();
             base.OnStartup(e);
-        }
-
-        private void BtnClose_OnClick(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void BtnRestore_OnClick(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -11,14 +11,13 @@ namespace MVVMFramework.Views
 {
     public abstract class ViewBaseWindow : Window
     {
-        public ViewBaseWindow(ViewModel viewModel)
+        protected ViewBaseWindow(ViewModel viewModel)
         {
             DataContext = viewModel;
             Loaded += BeforeShow;
             ContentRendered += AfterShow;
             Closing += OnClosing;
             Closed += OnClosed;
-            Style = Resources["StandardStyle"] as Style;
         }
 
         protected virtual void BeforeShow(object sender, RoutedEventArgs e) => throw new NotImplementedException();

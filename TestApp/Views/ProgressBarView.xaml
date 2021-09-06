@@ -26,7 +26,7 @@
           </ItemsControl.ItemTemplate>
         </ItemsControl>
       </ScrollViewer>
-      <controls:MediumButton Content="asdsad"/>
+      <controls:MediumButton Content="cancel" Command="{Binding CancelCommand}"/>
     </controls:DefaultStackPanel>
   </Grid>
 </UserControl>

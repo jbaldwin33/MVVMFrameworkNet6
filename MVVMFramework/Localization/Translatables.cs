@@ -453,4 +453,16 @@ namespace MVVMFramework.Localization
         public ChapterAdderTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "Chapter Adder";
     }
+
+    public class UnhandledExceptionTranslatable : Translatable
+    {
+        public UnhandledExceptionTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Unhandled Exception";
+    }
+
+    public class SelectOutputFolderTranslatable : Translatable
+    {
+        public SelectOutputFolderTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Please select an output folder.";
+    }
 }

@@ -7,9 +7,9 @@ namespace MVVMFramework.Views
 {
     public abstract class ViewBaseControl : UserControl
     {
-        private ViewModel viewModel;
+        private readonly ViewModel viewModel;
 
-        public ViewBaseControl(ViewModel viewModel) : this()
+        protected ViewBaseControl(ViewModel viewModel) : this()
         {
             this.viewModel = viewModel;
             DataContext = viewModel;

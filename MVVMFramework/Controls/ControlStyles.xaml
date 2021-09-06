@@ -234,7 +234,8 @@
       </Setter.Value>
     </Setter>
   </Style>
-  <Style x:Key="PopupWindowStyle" TargetType="{x:Type Window}">
+
+  <Style x:Key="PopupWindowStyle" TargetType="{x:Type views:PopupWindowView}">
     <Setter Property="WindowChrome.WindowChrome">
       <Setter.Value>
         <WindowChrome CaptionHeight="30"
@@ -249,7 +250,7 @@
     <Setter Property="Background" Value="White" />
     <Setter Property="Template">
       <Setter.Value>
-        <ControlTemplate TargetType="{x:Type Window}">
+        <ControlTemplate TargetType="{x:Type views:PopupWindowView}">
           <Grid>
             <Border Background="{TemplateBinding Background}"
                       BorderBrush="{TemplateBinding BorderBrush}"

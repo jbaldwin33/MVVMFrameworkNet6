@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace MVVMFramework.Views
 {
@@ -11,5 +12,9 @@ namespace MVVMFramework.Views
         {
             InitializeComponent();
         }
+
+        //SizeToContent is set to height and width and I'm using a custom chrome style for the window.
+        //Because of this there's a black border on right and left. using this method to remove it
+        private void Window_OnContentRendered(object sender, EventArgs e) => InvalidateVisual();
     }
 }
