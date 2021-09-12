@@ -187,11 +187,7 @@ namespace MVVMFramework.Localization
         public MoveUpLabelTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "Move up";
     }
-    public class NoFileSelectedTranslatable : Translatable
-    {
-        public NoFileSelectedTranslatable(params object[] parameters) : base(parameters) { }
-        protected override string GetDefaultTranslation() => "No file selected.";
-    }
+
     public class SpeedChangerTranslatable : Translatable
     {
         public SpeedChangerTranslatable(params object[] parameters) : base(parameters) { }
@@ -464,5 +460,35 @@ namespace MVVMFramework.Localization
     {
         public SelectOutputFolderTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "Please select an output folder.";
+    }
+
+    public class DragFileTranslatable : Translatable
+    {
+        public DragFileTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Drag video files here...";
+    }
+
+    public class ChapterMarkerCompatibleFormatsTranslatable : Translatable
+    {
+        public ChapterMarkerCompatibleFormatsTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Chapter markers are only compatible with the following formats: {0}";
+    }
+
+    public class FileAlreadyExistsTranslatable : Translatable
+    {
+        public FileAlreadyExistsTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "The file {0} already exists. Overwrite? (Select \"No\" to output to a different file name.)";
+    }
+
+    public class OnlyVideoFilesTranslatable : Translatable
+    {
+        public OnlyVideoFilesTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Only video files can be added";
+    }
+
+    public class PlaylistEmptyTranslatable : Translatable
+    {
+        public PlaylistEmptyTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "This playlist is empty. No videos were downloaded";
     }
 }

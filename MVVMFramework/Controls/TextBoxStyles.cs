@@ -35,12 +35,15 @@ namespace MVVMFramework.Controls
         {
             Template = SetTemplateContent<DefaultTextBox>();
             HorizontalAlignment = HorizontalAlignment.Left;
-            //Margin = new Thickness(5, -2, 0, 0);
             Padding = new Thickness(0, -3, 0, 0);
             Margin = new Thickness(10, 0, 10, 10);
-            //Padding = new Thickness(5);
-            Background = Application.Current.FindResource("WindowBackgroundBrush") as SolidColorBrush;
-            BorderBrush = Application.Current.FindResource("SolidBorderBrush") as SolidColorBrush;
+            var myResourceDictionary = new ResourceDictionary
+            {
+                Source = new Uri("/MVVMFramework;component/Controls/ControlStyles.xaml", UriKind.RelativeOrAbsolute)
+            };
+
+            Background = myResourceDictionary["WindowBackgroundBrush"] as SolidColorBrush;
+            BorderBrush = myResourceDictionary["SolidBorderBrush"] as SolidColorBrush;
             BorderThickness = new Thickness(1);
         }
     }

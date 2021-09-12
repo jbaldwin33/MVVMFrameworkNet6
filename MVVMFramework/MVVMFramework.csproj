@@ -134,9 +134,10 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y "$(OutputDir)MVVMFramework.dll" "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug"
-if not exist "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug\Localization" mkdir "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug\Localization"
-xcopy /Y/E "$(SolutionDir)\Localization\*" "$(SolutionDir)..\VideoEditorNetFramework\VideoEditorUi\bin\Debug\Localization"
+    <PostBuildEvent>xcopy /Y "$(OutputDir)MVVMFramework.dll" "$(SolutionDir)..\VideoEditorNetFramework\DLLs"
+xcopy /Y "$(OutputDir)MVVMFramework.dll" "$(SolutionDir)TestApp\bin\Debug"
+if not exist "$(SolutionDir)..\VideoEditorNetFramework\DLLs\Localization" mkdir "$(SolutionDir)..\VideoEditorNetFramework\DLLs\Localization"
+xcopy /Y/E "$(SolutionDir)\Localization\*" "$(SolutionDir)..\VideoEditorNetFramework\DLLs\Localization"
 if not exist "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization" mkdir "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization"
 xcopy /Y/E "$(SolutionDir)\Localization\*" "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization"
 if not exist "$(SolutionDir)\TestApp\bin\Debug\Localization" mkdir "$(SolutionDir)\TestApp\bin\Debug\Localization"

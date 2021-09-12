@@ -14,14 +14,10 @@ namespace MVVMFramework.Utilities
             return objValue ? Visibility.Collapsed : Visibility.Visible;
         }
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) =>
-            GetVisibility(value);
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => GetVisibility(value);
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-            return value != null && (Visibility)value == Visibility.Collapsed;
-        }
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => throw new NotImplementedException();
+        //return value != null && (Visibility)value == Visibility.Collapsed;
     }
 
     [ValueConversion(typeof(bool), typeof(bool))]

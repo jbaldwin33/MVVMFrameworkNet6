@@ -28,6 +28,7 @@ namespace TestApp
         public MainWindow() : base(Navigator.Instance.CurrentViewModel)
         {
             InitializeComponent();
+            var t = new SmallTextBox();
         }
 
         private void Vm_ShowMessageBoxEventHandler(object sender, MessageBoxEventArgs e)
