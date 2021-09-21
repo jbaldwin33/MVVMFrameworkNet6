@@ -38,27 +38,6 @@
     <Setter Property="VerticalContentAlignment" Value="Center"/>
   </Style>
 
-  <Style TargetType="Border">
-    <Style.Triggers>
-      <Trigger Property="local:DragDropHelper.IsDragOver" Value="True">
-        <Trigger.EnterActions>
-          <BeginStoryboard>
-            <Storyboard Storyboard.Target="{StaticResource SharedBackgroundBrush}" Storyboard.TargetProperty="Color">
-              <ColorAnimation From="Transparent" To="Yellow" Duration="0:0:0.5" />
-            </Storyboard>
-          </BeginStoryboard>
-        </Trigger.EnterActions>
-        <Trigger.ExitActions>
-          <BeginStoryboard>
-            <Storyboard Storyboard.Target="{StaticResource SharedBackgroundBrush}" Storyboard.TargetProperty="Color">
-              <ColorAnimation From="Yellow" To="Transparent" Duration="0:0:0.5" />
-            </Storyboard>
-          </BeginStoryboard>
-        </Trigger.ExitActions>
-      </Trigger>
-    </Style.Triggers>
-  </Style>
-
   <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
     <Setter Property="Template">
       <Setter.Value>
@@ -254,7 +233,7 @@
                         Width="20"
                         Margin="5"
                         VerticalContentAlignment="Bottom"
-                        Click="MaximizeRestoreClick"
+                        Click="MinimizeClick"
                         Content="_"
                         DockPanel.Dock="Right"
                         WindowChrome.IsHitTestVisibleInChrome="True" />

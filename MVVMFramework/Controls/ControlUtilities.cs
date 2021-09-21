@@ -85,20 +85,4 @@ namespace MVVMFramework.Controls
 
         internal static Setter CreateSetter(DependencyProperty prop, object value, string targetName = null) => new Setter { Property = prop, Value = value, TargetName = targetName };
     }
-
-    public class DragDropHelper
-    {
-        public static readonly DependencyProperty IsDragOverProperty = DependencyProperty.RegisterAttached(
-            "IsDragOver", typeof(bool), typeof(DragDropHelper), new PropertyMetadata(default(bool)));
-
-        public static void SetIsDragOver(DependencyObject element, bool value)
-        {
-            element.SetValue(IsDragOverProperty, value);
-        }
-
-        public static bool GetIsDragOver(DependencyObject element)
-        {
-            return (bool)element.GetValue(IsDragOverProperty);
-        }
-    }
 }

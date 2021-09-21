@@ -6,15 +6,26 @@
         xmlns:local="clr-namespace:TestApp"
         xmlns:views="clr-namespace:MVVMFramework.Views;assembly=MVVMFramework"
         xmlns:controls="clr-namespace:MVVMFramework.Controls;assembly=MVVMFramework"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         Height="450" Width="800">
   <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
     <controls:DefaultStackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
       <controls:ExtraSmallButton Content="xtra"/>
       <controls:SmallButton Content="small"/>
       <controls:MediumButton Content="medium"/>
       <controls:LargeButton Content="large"/>
       <controls:ExtraLargeButton Content="xtralarge" Command="{Binding ShowMessageCommand}"/>
+    </controls:DefaultStackPanel>
+    <controls:DefaultStackPanel Grid.Row="1" Orientation="Vertical">
+      <controls:MediumButton>
+      <iconPacks:PackIconMaterial Kind="Play" />
+      </controls:MediumButton>
+      <iconPacks:PackIconMaterial Kind="AccessPoint" />
     </controls:DefaultStackPanel>
   </Grid>
 </views:ViewBaseControl>
