@@ -15,14 +15,15 @@ namespace MVVMFramework.Views
     /// </summary>
     public partial class BaseWindowView : ViewBaseWindow
     {
-        public BaseWindowView((Type, string)[] viewModelTypes) : base(new MainViewModel(Navigator.Instance))
+        public BaseWindowView((Type, string, bool)[] viewModelTypes) : base(new MainViewModel(Navigator.Instance))
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             if (viewModelTypes == null || viewModelTypes.Length == 0)
                 throw new ArgumentNullException(nameof(viewModelTypes));
 
             InitializeComponent();
-            foreach (var (type, name) in viewModelTypes)
+            Navigator.Instance.NavigationBar = navigationBar;
+            foreach (var (type, name, show) in viewModelTypes)
             {
                 var instance = (ViewModel)Activator.CreateInstance(type);
                 if (Navigator.Instance.CurrentViewModel == null)
@@ -44,6 +45,7 @@ namespace MVVMFramework.Views
                 };
                 
                 button.SetBinding(IsEnabledProperty, binding);
+                button.Visibility = show ? Visibility.Visible : Visibility.Collapsed;
                 navigationBar.stackPanel.Children.Add(button);
             }
         }

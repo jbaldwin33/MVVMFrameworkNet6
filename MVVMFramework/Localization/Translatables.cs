@@ -491,4 +491,306 @@ namespace MVVMFramework.Localization
         public PlaylistEmptyTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "This playlist is empty. No videos were downloaded";
     }
+
+    public class DownloadAudioOnlyTranslatable : Translatable
+    {
+        public DownloadAudioOnlyTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Download audio only?";
+    }
+
+    //bank client
+
+    public class WelcomeTranslatable : Translatable
+    {
+        public WelcomeTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Welcome to J Bank";
+    }
+
+    public class DepositTranslatable : Translatable
+    {
+        public DepositTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "deposit";
+    }
+
+    public class DepositCommandTranslatable : Translatable
+    {
+        public DepositCommandTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Deposit";
+    }
+
+    public class WithdrawTranslatable : Translatable
+    {
+        public WithdrawTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "withdraw";
+    }
+
+    public class WithdrawCommandTranslatable : Translatable
+    {
+        public WithdrawCommandTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Withdraw";
+    }
+
+    public class TransferTranslatable : Translatable
+    {
+        public TransferTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "transfer";
+    }
+
+    public class TransferCommandTranslatable : Translatable
+    {
+        public TransferCommandTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Transfer";
+    }
+
+    public class OperationQuestionTranslatable : Translatable
+    {
+        public OperationQuestionTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Enter the amount to {0}:";
+    }
+
+    public class FailedToGetAccountDetailsErrorTranslatable : Translatable
+    {
+        public FailedToGetAccountDetailsErrorTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Failed to get account details: {0}";
+    }
+
+    public class ErrorTranslatable : Translatable
+    {
+        public ErrorTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Error";
+    }
+
+    public class InformationTranslatable : Translatable
+    {
+        public InformationTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Information";
+    }
+
+    public class AmountGreaterThanZeroTranslatable : Translatable
+    {
+        public AmountGreaterThanZeroTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Please enter an amount greater than 0";
+    }
+
+    public class OperationFailedErrorTranslatable : Translatable
+    {
+        public OperationFailedErrorTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Operation failed: {0}";
+    }
+
+    public class EnterUserForTransferTranslatable : Translatable
+    {
+        public EnterUserForTransferTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Please enter a user to transfer funds to";
+    }
+
+    public class TransferFailedErrorTranslatable : Translatable
+    {
+        public TransferFailedErrorTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Transfer failed : {0}";
+    }
+
+    public class UsernameDoesNotExistTranslatable : Translatable
+    {
+        public UsernameDoesNotExistTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "This username does not exist";
+    }
+
+    public class LoginSuccessfulTranslatable : Translatable
+    {
+        public LoginSuccessfulTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Log in successful";
+    }
+
+    public class LoginFailedErrorTranslatable : Translatable
+    {
+        public LoginFailedErrorTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Log in failed: {0}";
+    }
+
+    public class LogoutSuccessfulTranslatable : Translatable
+    {
+        public LogoutSuccessfulTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Log out successful";
+    }
+
+    public class LogoutFailedErrorTranslatable : Translatable
+    {
+        public LogoutFailedErrorTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Log out failed: {0}";
+    }
+
+    public class SignUpSuccessfulTranslatable : Translatable
+    {
+        public SignUpSuccessfulTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Sign up successful";
+    }
+
+    public class SignUpFailedErrorTranslatable : Translatable
+    {
+        public SignUpFailedErrorTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Sign up failed: {0}";
+    }
+
+    public class CheckingLabelTranslatable : Translatable
+    {
+        public CheckingLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Checking";
+    }
+
+    public class SavingLabelTranslatable : Translatable
+    {
+        public SavingLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Saving";
+    }
+
+    public class UsernameAlreadyExistsTranslatable : Translatable
+    {
+        public UsernameAlreadyExistsTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "This username already exists";
+    }
+
+    public class FailedToGetTransactionsErrorTranslatable : Translatable
+    {
+        public FailedToGetTransactionsErrorTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Failed to get transactions: {0}";
+    }
+
+    public class LoginLabelTranslatable : Translatable
+    {
+        public LoginLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Log in";
+    }
+
+    public class LogoutLabelTranslatable : Translatable
+    {
+        public LogoutLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Log out";
+    }
+
+    public class SignUpLabelTranslatable : Translatable
+    {
+        public SignUpLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Sign up";
+    }
+
+    public class UsernameLabelTranslatable : Translatable
+    {
+        public UsernameLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Username";
+    }
+
+    public class PasswordLabelTranslatable : Translatable
+    {
+        public PasswordLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Password";
+    }
+
+    public class FirstNameLabelTranslatable : Translatable
+    {
+        public FirstNameLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "First name";
+    }
+
+    public class LastNameLabelTranslatable : Translatable
+    {
+        public LastNameLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Last name";
+    }
+
+    public class AccountTypeLabelTranslatable : Translatable
+    {
+        public AccountTypeLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Account type";
+    }
+
+    public class BalanceLabelTranslatable : Translatable
+    {
+        public BalanceLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Balance";
+    }
+
+    public class RecentTransactionsLabelTranslatable : Translatable
+    {
+        public RecentTransactionsLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Recent transactions";
+    }
+
+    public class HomeLabelTranslatable : Translatable
+    {
+        public HomeLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Home";
+    }
+
+    public class AccountLabelTranslatable : Translatable
+    {
+        public AccountLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Account";
+    }
+
+    public class UserDetailsLabelTranslatable : Translatable
+    {
+        public UserDetailsLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "User details";
+    }
+
+    public class TransactionsLabelTranslatable : Translatable
+    {
+        public TransactionsLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Transactions";
+    }
+
+    public class CancelTranslatable : Translatable
+    {
+        public CancelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Cancel";
+    }
+
+    public class UsernameEmptyTranslatable : Translatable
+    {
+        public UsernameEmptyTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Please enter a username";
+    }
+
+    public class PasswordEmptyTranslatable : Translatable
+    {
+        public PasswordEmptyTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Please enter a password";
+    }
+
+    public class FirstNameEmptyTranslatable : Translatable
+    {
+        public FirstNameEmptyTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Please enter a first name";
+    }
+
+    public class LastNameEmptyTranslatable : Translatable
+    {
+        public LastNameEmptyTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Please enter a last name";
+    }
+
+    public class NameOfRecipientTranslatable : Translatable
+    {
+        public NameOfRecipientTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Username of recipient";
+    }
+
+    public class SessionInvalidLoggingOutTranslatable : Translatable
+    {
+        public SessionInvalidLoggingOutTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "The current session is invalid. You will be logged out.";
+    }
+
+    public class SaveTranslatable : Translatable
+    {
+        public SaveTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Save";
+    }
+
+    public class BankErrorOccurredTranslatable : Translatable
+    {
+        public BankErrorOccurredTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "An error occurred: {0}";
+    }
 }

@@ -1,12 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net5.0-windows7.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\MVVMFramework\MVVMFramework.csproj" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.246501">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
-
+  <ItemGroup>
+    <Reference Include="MVVMFramework">
+      <HintPath>..\MVVMFramework\bin\Debug\MVVMFramework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

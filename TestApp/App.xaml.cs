@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Globalization;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 using MVVMFramework.Localization;
 using MVVMFramework.Views;
 
@@ -23,11 +14,11 @@ namespace TestApp
             //TranslatableClass.Instance.CurrentCultureInfo = CultureInfo.GetCultureInfo("ja-JP");
             var types = new[]
             {
-                (typeof(TestViewModel), "Change Speed"),
-                (typeof(TestViewModel), "Change Speed"),
-                (typeof(TestViewModel), "Change Speed"),
-                (typeof(TestViewModel), "Change Speed"),
-                (typeof(TestViewModel), new SplitterTranslatable()),
+                (typeof(TestViewModel), "Change Speed", true),
+                (typeof(TestViewModel), "Change Speed", true),
+                (typeof(TestViewModel), "Change Speed", true),
+                (typeof(TestViewModel), "Change Speed", true),
+                (typeof(TestViewModel), new SplitterTranslatable(), true),
             };
             var window = new BaseWindowView(types)
             {

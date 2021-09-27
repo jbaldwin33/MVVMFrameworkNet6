@@ -1,25 +1,18 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
-using System.Windows.Forms;
 using System.Windows.Input;
 using MVVMFramework.ViewModels;
 using MVVMFramework.Views;
-using Application = System.Windows.Application;
+using System.Windows.Controls;
 
 namespace MVVMFramework.ViewNavigator
 {
-    public enum ViewType
-    {
-        Splitter,
-        Converter
-    }
-
     public interface INavigator
     {
+        NavigationBar NavigationBar { get; set; }
         List<ViewModel> ViewModels { get; set; }
         ViewModel CurrentViewModel { get; set; }
         ViewModel ChildViewModel { get; set; }
@@ -28,12 +21,14 @@ namespace MVVMFramework.ViewNavigator
         ICommand OpenChildWindow { get; }
         ICommand CloseChildWindow { get; }
         void SetChildViewShown(bool shown);
+        void SetButtonVisibility(Type viewType, bool show);
     }
 
     public class Navigator : INavigator, INotifyPropertyChanged
     {
         private static readonly Lazy<Navigator> instance = new Lazy<Navigator>(() => new Navigator());
         public static Navigator Instance => instance.Value;
+        private NavigationBar navigationBar;
         private List<ViewModel> viewModels = new List<ViewModel>();
         private ViewModel currentViewModel;
         private ViewModel childViewModel;
@@ -47,6 +42,16 @@ namespace MVVMFramework.ViewNavigator
         }
 
         #region Properties
+
+        public NavigationBar NavigationBar
+        {
+            get => navigationBar;
+            set
+            {
+                navigationBar = value;
+                OnPropertyChanged(nameof(NavigationBar));
+            }
+        }
 
         public List<ViewModel> ViewModels
         {
@@ -101,12 +106,20 @@ namespace MVVMFramework.ViewNavigator
         #endregion
 
         public void SetChildViewShown(bool shown) => ChildViewShown = shown;
+        public void SetButtonVisibility(Type viewType, bool show)
+        {
+            NavigationBar.stackPanel.Children.OfType<Button>().First(b => (b.CommandParameter as ViewModel).GetType() == viewType).Visibility = show
+                ? Visibility.Visible
+                : Visibility.Collapsed;
+        }
 
-        public ICommand UpdateCurrentViewModelCommand => new UpdateCurrentViewModelCommand(this);
+        public ICommand UpdateCurrentViewModelCommand => new UpdateCurrentViewModelCommand(this, BeforeUpdate, AfterUpdate);
         public ICommand OpenChildWindow => new OpenChildWindowCommand(this);
         public ICommand CloseChildWindow => new CloseChildWindowCommand(this);
 
         public event PropertyChangedEventHandler PropertyChanged;
+        public event Func<bool> BeforeUpdate;
+        public event Action AfterUpdate;
 
         protected void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
@@ -114,11 +127,15 @@ namespace MVVMFramework.ViewNavigator
     public class UpdateCurrentViewModelCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
+        public event Func<bool> BeforeUpdate;
+        public event Action AfterUpdate;
         private INavigator navigator;
 
-        public UpdateCurrentViewModelCommand(INavigator navigator)
+        public UpdateCurrentViewModelCommand(INavigator navigator, Func<bool> before, Action after)
         {
             this.navigator = navigator;
+            BeforeUpdate = before;
+            AfterUpdate = after;
         }
 
         public bool CanExecute(object parameter) => parameter is ViewModel vm && !vm.IsShown;
@@ -130,8 +147,12 @@ namespace MVVMFramework.ViewNavigator
 
             if (vm == navigator.CurrentViewModel)
                 return;
-
-            navigator.CurrentViewModel = vm;
+            
+            var canUpdate = BeforeUpdate?.Invoke();
+            if (!canUpdate.HasValue || canUpdate.Value)
+                navigator.CurrentViewModel = vm;
+            else
+                AfterUpdate?.Invoke();
         }
 
         public void RaiseCanExecuteChanged()

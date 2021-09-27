@@ -37,6 +37,10 @@
     <Setter Property="HorizontalContentAlignment" Value="Center"/>
     <Setter Property="VerticalContentAlignment" Value="Center"/>
   </Style>
+  <Style TargetType="PasswordBox">
+    <Setter Property="Margin" Value="10,0,10,10"/>
+    <Setter Property="Padding" Value="0,-3,0,0"/>
+  </Style>
 
   <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
     <Setter Property="Template">
