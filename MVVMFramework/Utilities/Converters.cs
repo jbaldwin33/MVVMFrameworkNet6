@@ -5,6 +5,21 @@ using System.Windows.Data;
 
 namespace MVVMFramework.Utilities
 {
+    public class BooleanToHiddenVisibility : IValueConverter
+    {
+        private object GetVisibility(object value)
+        {
+            if (!(value is bool objValue))
+                return Visibility.Visible;
+            return objValue ? Visibility.Visible : Visibility.Hidden;
+        }
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => GetVisibility(value);
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => throw new NotImplementedException();
+        //return value != null && (Visibility)value == Visibility.Collapsed;
+    }
+
     public class InverseBooleanToVisibilityConverter : IValueConverter
     {
         private object GetVisibility(object value)

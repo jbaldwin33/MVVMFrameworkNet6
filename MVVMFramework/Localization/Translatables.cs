@@ -131,7 +131,7 @@ namespace MVVMFramework.Localization
     {
         public ReverseVideoMessageTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "Reversing a video uses a lot of computer resources and can be time consuming. If you are going to reverse a video, make sure of the following:\n  1) It is best to not have other big programs running.\nAre you sure you want to continue?";
-}
+    }
     public class SelectFileLabelTranslatable : Translatable
     {
         public SelectFileLabelTranslatable(params object[] parameters) : base(parameters) { }
@@ -156,6 +156,12 @@ namespace MVVMFramework.Localization
     {
         public VideoCounterLabelTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "Video {0} of {1}";
+    }
+
+    public class PlaylistCounterLabelTranslatable : Translatable
+    {
+        public PlaylistCounterLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Playlist {0} of {1}";
     }
     public class SizeReducerTranslatable : Translatable
     {
@@ -379,7 +385,7 @@ namespace MVVMFramework.Localization
     {
         public ErrorOccurredTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "An error has occurred. Please close and reopen the program. Check your task manager and make sure any remaining \"ffmpeg.exe\" tasks are ended.";
-}
+    }
     public class RotateLabelTranslatable : Translatable
     {
         public RotateLabelTranslatable(params object[] parameters) : base(parameters) { }
@@ -498,7 +504,25 @@ namespace MVVMFramework.Localization
         protected override string GetDefaultTranslation() => "Download audio only?";
     }
 
-    //bank client
+    public class AddTranslatable : Translatable
+    {
+        public AddTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Add";
+    }
+
+    public class UrlAddedTranslatable : Translatable
+    {
+        public UrlAddedTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "URL added!";
+    }
+
+    public class AddUrlsForVideoPlaylistTranslatable : Translatable
+    {
+        public AddUrlsForVideoPlaylistTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Add URLs for videos or playlists";
+    }
+
+    #region Bank Client
 
     public class WelcomeTranslatable : Translatable
     {
@@ -793,4 +817,6 @@ namespace MVVMFramework.Localization
         public BankErrorOccurredTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "An error occurred: {0}";
     }
+
+    #endregion
 }

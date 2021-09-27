@@ -9,6 +9,7 @@
       <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
       <utilities:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
       <utilities:InverseBooleanToVisibilityConverter x:Key="InvBoolToVisConverter"/>
+      <utilities:BooleanToHiddenVisibility x:Key="BoolToHiddenVisConverter"/>
     </ResourceDictionary>
   </ResourceDictionary.MergedDictionaries>
   
