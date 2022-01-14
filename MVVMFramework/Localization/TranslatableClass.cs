@@ -27,14 +27,13 @@ namespace MVVMFramework.Localization
         public int CurrentLCID { get; private set; }
         private static XmlSerializer _xmlSerializer;
         private static XmlSerializer xmlSerializer => _xmlSerializer ?? (_xmlSerializer = new XmlSerializer(typeof(LocalizationClass)));
-        private static readonly string localizationPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Localization", "Localization.xml");
-        private static readonly string masterLocalizationPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "VSProjects", "MVVMFramework", "Localization", "Localization.xml");
+        private static readonly string masterLocalizationPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Localization", "Localization.xml");
         private TranslatableClass()
         {
-            if (string.IsNullOrEmpty(localizationPath))
+            if (string.IsNullOrEmpty(masterLocalizationPath))
                 throw new Exception("Cannot read 'binaryFolder' variable from app.config / web.config.");
 
-            using (var reader = new StreamReader(localizationPath))
+            using (var reader = new StreamReader(masterLocalizationPath))
                 LocalizationFile = (LocalizationClass)xmlSerializer.Deserialize(reader);
             CurrentCultureInfo = CultureInfo.CurrentUICulture;
         }
@@ -59,6 +58,7 @@ namespace MVVMFramework.Localization
                         }
                     }
                 });
+                Console.WriteLine($"{nameof(translatable)} added.");
             }
 
             SaveFile();
@@ -69,9 +69,10 @@ namespace MVVMFramework.Localization
             using (var stringWriter = new StringWriter())
             {
                 xmlSerializer.Serialize(stringWriter, LocalizationFile);
-                File.WriteAllText(localizationPath, stringWriter.ToString(), Encoding.Unicode);
+                //File.WriteAllText(localizationPath, stringWriter.ToString(), Encoding.Unicode);
                 File.WriteAllText(masterLocalizationPath, stringWriter.ToString(), Encoding.Unicode);
             }
+            Console.WriteLine("Localization file saved.");
         }
     }
 

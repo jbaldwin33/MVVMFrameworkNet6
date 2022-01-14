@@ -38,12 +38,12 @@ namespace MVVMFramework.Views
                 };
                 var binding = new Binding("IsShown")
                 {
-                    Mode = BindingMode.TwoWay, 
-                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged, 
+                    Mode = BindingMode.TwoWay,
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                     Converter = new InverseBooleanConverter(),
                     Source = Navigator.Instance.ViewModels.FirstOrDefault(vm => vm.GetType() == type)
                 };
-                
+
                 button.SetBinding(IsEnabledProperty, binding);
                 button.Visibility = show ? Visibility.Visible : Visibility.Collapsed;
                 navigationBar.stackPanel.Children.Add(button);

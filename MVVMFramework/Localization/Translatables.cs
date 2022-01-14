@@ -522,6 +522,48 @@ namespace MVVMFramework.Localization
         protected override string GetDefaultTranslation() => "Add URLs for videos or playlists";
     }
 
+    public class DoneTranslatable : Translatable
+    {
+        public DoneTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Done";
+    }
+
+    public class ResizerTranslatable : Translatable
+    {
+        public ResizerTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Resizer";
+    }
+
+    public class VideoSuccessfullyResizedTranslatable : Translatable
+    {
+        public VideoSuccessfullyResizedTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Video successfully resized!";
+    }
+
+    public class CropTranslatable : Translatable
+    {
+        public CropTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Crop";
+    }
+
+    public class VideoSuccessfullyCroppedTranslatable : Translatable
+    {
+        public VideoSuccessfullyCroppedTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Video successfully cropped!";
+    }
+
+    public class CroppingLabelTranslatable : Translatable
+    {
+        public CroppingLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Cropping video...";
+    }
+
+    public class OpenCropWindowTranslatable : Translatable
+    {
+        public OpenCropWindowTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Open crop window";
+    }
+
     #region Bank Client
 
     public class WelcomeTranslatable : Translatable

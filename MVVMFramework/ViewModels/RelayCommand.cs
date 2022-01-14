@@ -68,7 +68,7 @@ namespace MVVMFramework.ViewModels
                 executeWithParameter(parameter);
             else
                 execute();
-        } 
+        }
         public void Execute(object parameter1, object parameter2) => executeMultipleParameters(parameter1, parameter2);
     }
 }

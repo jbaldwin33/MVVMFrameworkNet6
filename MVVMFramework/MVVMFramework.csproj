@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -74,6 +74,7 @@
     <Compile Include="Localization\Translatables.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PopupWindowViewModel.cs" />
+    <Compile Include="ViewNavigator\INavigator.cs" />
     <Compile Include="ViewNavigator\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
     </Compile>
@@ -119,12 +120,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /Y "$(OutputDir)MVVMFramework.dll" "$(SolutionDir)..\VideoEditorNetFramework\DLLs"
-xcopy /Y "$(OutputDir)MVVMFramework.dll" "$(SolutionDir)TestApp\bin\Debug"
 if not exist "$(SolutionDir)..\VideoEditorNetFramework\DLLs\Localization" mkdir "$(SolutionDir)..\VideoEditorNetFramework\DLLs\Localization"
-xcopy /Y/E "$(SolutionDir)\Localization\*" "$(SolutionDir)..\VideoEditorNetFramework\DLLs\Localization"
-if not exist "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization" mkdir "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization"
-xcopy /Y/E "$(SolutionDir)\Localization\*" "$(SolutionDir)\TranslatableAdder\bin\Debug\net5.0\Localization"
-if not exist "$(SolutionDir)\TestApp\bin\Debug\Localization" mkdir "$(SolutionDir)\TestApp\bin\Debug\Localization"
-xcopy /Y/E "$(SolutionDir)\Localization\*" "$(SolutionDir)\TestApp\bin\Debug\Localization"</PostBuildEvent>
+xcopy /Y "$(OutputDir)Localization\*" "$(SolutionDir)..\VideoEditorNetFramework\DLLs\Localization"
+xcopy /Y "$(OutputDir)MVVMFramework.dll" "$(SolutionDir)..\Pokedex\Debug"</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -10,38 +10,20 @@ using System.Windows.Controls;
 
 namespace MVVMFramework.ViewNavigator
 {
-    public interface INavigator
-    {
-        NavigationBar NavigationBar { get; set; }
-        List<ViewModel> ViewModels { get; set; }
-        ViewModel CurrentViewModel { get; set; }
-        ViewModel ChildViewModel { get; set; }
-        Window ChildView { get; set; }
-        ICommand UpdateCurrentViewModelCommand { get; }
-        ICommand OpenChildWindow { get; }
-        ICommand CloseChildWindow { get; }
-        void SetChildViewShown(bool shown);
-        void SetButtonVisibility(Type viewType, bool show);
-    }
-
     public class Navigator : INavigator, INotifyPropertyChanged
     {
         private static readonly Lazy<Navigator> instance = new Lazy<Navigator>(() => new Navigator());
         public static Navigator Instance => instance.Value;
+
+        #region Fields and props
+
         private NavigationBar navigationBar;
         private List<ViewModel> viewModels = new List<ViewModel>();
+        private ViewModel mainViewModel;
         private ViewModel currentViewModel;
         private ViewModel childViewModel;
         private bool childViewShown;
         private Window childView;
-
-
-        public Navigator()
-        {
-
-        }
-
-        #region Properties
 
         public NavigationBar NavigationBar
         {
@@ -60,6 +42,16 @@ namespace MVVMFramework.ViewNavigator
             {
                 viewModels = value;
                 OnPropertyChanged(nameof(ViewModels));
+            }
+        }
+
+        public ViewModel MainViewModel
+        {
+            get => mainViewModel;
+            set
+            {
+                mainViewModel = value;
+                OnPropertyChanged(nameof(MainViewModel));
             }
         }
 
@@ -105,21 +97,27 @@ namespace MVVMFramework.ViewNavigator
 
         #endregion
 
-        public void SetChildViewShown(bool shown) => ChildViewShown = shown;
-        public void SetButtonVisibility(Type viewType, bool show)
-        {
-            NavigationBar.stackPanel.Children.OfType<Button>().First(b => (b.CommandParameter as ViewModel).GetType() == viewType).Visibility = show
-                ? Visibility.Visible
-                : Visibility.Collapsed;
-        }
-
-        public ICommand UpdateCurrentViewModelCommand => new UpdateCurrentViewModelCommand(this, BeforeUpdate, AfterUpdate);
-        public ICommand OpenChildWindow => new OpenChildWindowCommand(this);
-        public ICommand CloseChildWindow => new CloseChildWindowCommand(this);
+        #region Events
 
         public event PropertyChangedEventHandler PropertyChanged;
         public event Func<bool> BeforeUpdate;
         public event Action AfterUpdate;
+
+        #endregion
+
+        public Navigator() { }
+
+        public void SetChildViewShown(bool shown) => ChildViewShown = shown;
+        public void SetButtonVisibility(Type viewType, bool show) =>
+            NavigationBar.stackPanel.Children.OfType<Button>().First(b => (b.CommandParameter as ViewModel).GetType() == viewType).Visibility = show
+            ? Visibility.Visible
+            : Visibility.Collapsed;
+
+        public void SetMainViewModel(ViewModel vm) => MainViewModel = vm;
+
+        public ICommand UpdateCurrentViewModelCommand => new UpdateCurrentViewModelCommand(BeforeUpdate, AfterUpdate);
+        public ICommand OpenChildWindow => new OpenChildWindowCommand();
+        public ICommand CloseChildWindow => new CloseChildWindowCommand();
 
         protected void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
@@ -129,11 +127,9 @@ namespace MVVMFramework.ViewNavigator
         public event EventHandler CanExecuteChanged;
         public event Func<bool> BeforeUpdate;
         public event Action AfterUpdate;
-        private INavigator navigator;
 
-        public UpdateCurrentViewModelCommand(INavigator navigator, Func<bool> before, Action after)
+        public UpdateCurrentViewModelCommand(Func<bool> before, Action after)
         {
-            this.navigator = navigator;
             BeforeUpdate = before;
             AfterUpdate = after;
         }
@@ -145,73 +141,57 @@ namespace MVVMFramework.ViewNavigator
             if (!(parameter is ViewModel vm))
                 throw new NotSupportedException();
 
-            if (vm == navigator.CurrentViewModel)
+            if (vm == Navigator.Instance.CurrentViewModel)
                 return;
-            
+
             var canUpdate = BeforeUpdate?.Invoke();
             if (!canUpdate.HasValue || canUpdate.Value)
-                navigator.CurrentViewModel = vm;
+                Navigator.Instance.CurrentViewModel = vm;
             else
                 AfterUpdate?.Invoke();
         }
 
-        public void RaiseCanExecuteChanged()
-        {
-            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
-        }
+        public void RaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public class OpenChildWindowCommand : ICommand
     {
-
         public event EventHandler CanExecuteChanged;
-        private INavigator navigator;
 
-        public OpenChildWindowCommand(INavigator navigator)
-        {
-            this.navigator = navigator;
-        }
+        public OpenChildWindowCommand() { }
 
         public bool CanExecute(object parameter) => true;
 
-        public void Execute(object parameter)
-        {
+        public void Execute(object parameter) =>
             Application.Current.Dispatcher.Invoke(() =>
             {
-                navigator.ChildView = new PopupWindowView
+                Navigator.Instance.ChildView = new PopupWindowView
                 {
                     WindowStartupLocation = WindowStartupLocation.CenterOwner,
                     contentControl = { Content = parameter as ViewModel },
                     WindowStyle = WindowStyle.None
                 };
-                navigator.ChildViewModel = parameter as ViewModel;
-                navigator.SetChildViewShown(true);
-                navigator.ChildView.Owner = Application.Current.MainWindow;
-                navigator.ChildView.ShowDialog();
+                Navigator.Instance.ChildViewModel = parameter as ViewModel;
+                Navigator.Instance.SetChildViewShown(true);
+                Navigator.Instance.ChildView.Owner = Application.Current.MainWindow;
+                Navigator.Instance.ChildView.ShowDialog();
             });
-        }
     }
 
     public class CloseChildWindowCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        private INavigator navigator;
 
-        public CloseChildWindowCommand(INavigator navigator)
-        {
-            this.navigator = navigator;
-        }
+        public CloseChildWindowCommand() { }
 
         public bool CanExecute(object parameter) => true;
 
-        public void Execute(object parameter)
-        {
+        public void Execute(object parameter) =>
             Application.Current.Dispatcher.Invoke(() =>
             {
-                navigator.ChildViewModel = null;
-                navigator.SetChildViewShown(false);
-                navigator.ChildView.Close();
+                Navigator.Instance.ChildViewModel = null;
+                Navigator.Instance.SetChildViewShown(false);
+                Navigator.Instance.ChildView.Close();
             });
-        }
     }
 }

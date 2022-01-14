@@ -10,7 +10,7 @@
     <Grid.Resources>
       <ResourceDictionary Source="../Controls/ControlStyles.xaml"/>
     </Grid.Resources>
-    <controls:DefaultStackPanel x:Name="stackPanel" VerticalAlignment="Center">
+    <controls:DefaultStackPanel x:Name="stackPanel" x:FieldModifier="public" VerticalAlignment="Center">
       
     </controls:DefaultStackPanel>
   </Grid>

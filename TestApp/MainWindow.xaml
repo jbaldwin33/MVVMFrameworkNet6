@@ -20,6 +20,7 @@
       <controls:MediumButton Content="medium"/>
       <controls:LargeButton Content="large"/>
       <controls:ExtraLargeButton Content="xtralarge" Command="{Binding ShowMessageCommand}"/>
+      <controls:MediumComboBox/>
     </controls:DefaultStackPanel>
     <controls:DefaultStackPanel Grid.Row="1" Orientation="Vertical">
       <controls:MediumButton>

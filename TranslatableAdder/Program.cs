@@ -1,4 +1,5 @@
 ﻿using MVVMFramework.Localization;
+using System;
 
 namespace TranslatableAdder
 {
@@ -8,6 +9,7 @@ namespace TranslatableAdder
         {
             var instance = TranslatableClass.Instance;
             instance.AddToLocalizationFile();
+            Console.ReadLine();
         }
     }
 }

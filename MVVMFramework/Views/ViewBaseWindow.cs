@@ -20,9 +20,9 @@ namespace MVVMFramework.Views
             Closed += OnClosed;
         }
 
-        protected virtual void BeforeShow(object sender, RoutedEventArgs e) => throw new NotImplementedException();
-        protected virtual void AfterShow(object sender, EventArgs e) => throw new NotImplementedException();
-        protected virtual void OnClosing(object sender, CancelEventArgs e) => throw new NotImplementedException();
-        protected virtual void OnClosed(object sender, EventArgs e) => throw new NotImplementedException();
+        protected virtual void BeforeShow(object sender, RoutedEventArgs e) { }
+        protected virtual void AfterShow(object sender, EventArgs e) { }
+        protected virtual void OnClosing(object sender, CancelEventArgs e) { }
+        protected virtual void OnClosed(object sender, EventArgs e) { }
     }
 }

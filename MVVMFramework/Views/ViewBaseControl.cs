@@ -9,9 +9,9 @@ namespace MVVMFramework.Views
     {
         private readonly ViewModel viewModel;
 
-        protected ViewBaseControl(ViewModel viewModel) : this()
+        protected ViewBaseControl()
         {
-            this.viewModel = viewModel;
+            viewModel = Navigator.Instance.CurrentViewModel;
             DataContext = viewModel;
             Height = 480;
             Width = 800;
@@ -35,7 +35,7 @@ namespace MVVMFramework.Views
             viewModel.OnUnloaded();
         }
 
-        public ViewBaseControl() { }
+        
 
         private void ViewModel_ShowMessageBoxEventHandler(object sender, MessageBoxEventArgs e) 
             => e.Result = Application.Current.Dispatcher.Invoke(() => MessageBox.Show(Navigator.Instance.ChildViewShown ? Navigator.Instance.ChildView : Application.Current.MainWindow, e.Message, e.MessageType.ToString(), e.Button, e.Image));
