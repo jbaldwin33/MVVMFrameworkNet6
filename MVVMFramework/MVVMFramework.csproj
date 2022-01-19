@@ -72,6 +72,7 @@
     <Compile Include="Localization\Translatable.cs" />
     <Compile Include="Localization\TranslatableClass.cs" />
     <Compile Include="Localization\Translatables.cs" />
+    <Compile Include="ViewModels\AsyncCommand.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PopupWindowViewModel.cs" />
     <Compile Include="ViewNavigator\INavigator.cs" />

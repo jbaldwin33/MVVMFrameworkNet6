@@ -53,6 +53,13 @@ namespace MVVMFramework.ViewModels
         public MessageBoxButton Button { get; set; }
         public MessageBoxImage Image { get; set; }
         public MessageBoxResult Result { get; set; }
+        public MessageBoxEventArgs(string message)
+        {
+            Message = message;
+            MessageType = MessageTypeEnum.Information;
+            Button = MessageBoxButton.OK;
+            Image = MessageBoxImage.Information;
+        }
 
         public MessageBoxEventArgs(string message, MessageTypeEnum type, MessageBoxButton button, MessageBoxImage image)
         {

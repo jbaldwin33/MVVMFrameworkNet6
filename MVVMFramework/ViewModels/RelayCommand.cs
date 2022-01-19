@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace MVVMFramework.ViewModels
@@ -8,6 +9,7 @@ namespace MVVMFramework.ViewModels
         private readonly Action execute;
         private readonly Action<object> executeWithParameter;
         private readonly Action<object, object> executeMultipleParameters;
+        private readonly Func<object, Task> executeAsync;
         private readonly Func<bool> canExecute;
         private readonly Predicate<object> canExecuteWithParameter;
 
@@ -47,6 +49,12 @@ namespace MVVMFramework.ViewModels
             this.canExecute = canExecute;
         }
 
+        public RelayCommand(Func<object, Task> executeAsync, Func<bool> canExecute)
+        {
+            this.executeAsync = executeAsync;
+            this.canExecute = canExecute;
+        }
+
         public void RaiseCanExecuteChanged() => CommandManager.InvalidateRequerySuggested();
 
         public event EventHandler CanExecuteChanged
@@ -62,13 +70,18 @@ namespace MVVMFramework.ViewModels
             return canExecute?.Invoke() ?? true;
         }
 
-        public void Execute(object parameter)
+        public async void Execute(object parameter)
         {
             if (executeWithParameter != null)
                 executeWithParameter(parameter);
+            else if (executeAsync != null)
+                await ExecuteAsync(parameter);
             else
                 execute();
         }
+
         public void Execute(object parameter1, object parameter2) => executeMultipleParameters(parameter1, parameter2);
+
+        public Task ExecuteAsync(object parameter) => executeAsync(parameter);
     }
 }
