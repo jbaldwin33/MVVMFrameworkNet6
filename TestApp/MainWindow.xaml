@@ -22,6 +22,7 @@
       <controls:ExtraLargeButton Content="xtralarge" Command="{Binding ShowMessageCommand}"/>
       <controls:MediumComboBox/>
     </controls:DefaultStackPanel>
+    <controls:MediumButton Content="hfhyfhfh"/>
     <controls:DefaultStackPanel Grid.Row="1" Orientation="Vertical">
       <controls:MediumButton>
       <iconPacks:PackIconMaterial Kind="Play" />

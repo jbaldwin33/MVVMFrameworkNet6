@@ -33,6 +33,7 @@ namespace MVVMFramework.ViewModels
         }
 
         protected void ShowMessage(MessageBoxEventArgs e) => ShowMessageBoxEventHandler?.Invoke(this, e);
+        protected void ShowMessage(string message) => ShowMessageBoxEventHandler?.Invoke(this, new MessageBoxEventArgs(message));
 
         public virtual void OnLoaded() { }
 
@@ -53,13 +54,7 @@ namespace MVVMFramework.ViewModels
         public MessageBoxButton Button { get; set; }
         public MessageBoxImage Image { get; set; }
         public MessageBoxResult Result { get; set; }
-        public MessageBoxEventArgs(string message)
-        {
-            Message = message;
-            MessageType = MessageTypeEnum.Information;
-            Button = MessageBoxButton.OK;
-            Image = MessageBoxImage.Information;
-        }
+        internal MessageBoxEventArgs(string message) : this(message, MessageTypeEnum.Information, MessageBoxButton.OK, MessageBoxImage.Information) { }
 
         public MessageBoxEventArgs(string message, MessageTypeEnum type, MessageBoxButton button, MessageBoxImage image)
         {

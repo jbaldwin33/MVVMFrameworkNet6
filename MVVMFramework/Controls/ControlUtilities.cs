@@ -21,16 +21,16 @@ namespace MVVMFramework.Controls
         private void MaximizeRestoreClick(object sender, RoutedEventArgs e)
         {
             var window = (Window)((FrameworkElement)sender).TemplatedParent;
-            if (window.WindowState == System.Windows.WindowState.Normal)
-                window.WindowState = System.Windows.WindowState.Maximized;
+            if (window.WindowState == WindowState.Normal)
+                window.WindowState = WindowState.Maximized;
             else
-                window.WindowState = System.Windows.WindowState.Normal;
+                window.WindowState = WindowState.Normal;
         }
 
         private void MinimizeClick(object sender, RoutedEventArgs e)
         {
             var window = (Window)((FrameworkElement)sender).TemplatedParent;
-            window.WindowState = System.Windows.WindowState.Minimized;
+            window.WindowState = WindowState.Minimized;
         }
     }
     public class ControlUtilities
@@ -43,8 +43,8 @@ namespace MVVMFramework.Controls
             border.SetValue(Border.BackgroundProperty, new TemplateBindingExtension(Border.BackgroundProperty));
             border.SetValue(Border.CornerRadiusProperty, new TemplateBindingExtension(Border.CornerRadiusProperty));
             contentControl.SetValue(ContentControl.ContentProperty, new TemplateBindingExtension(ContentControl.ContentProperty));
-            contentControl.SetValue(FrameworkElement.HorizontalAlignmentProperty, new TemplateBindingExtension(FrameworkElement.HorizontalAlignmentProperty));
-            contentControl.SetValue(FrameworkElement.VerticalAlignmentProperty, new TemplateBindingExtension(FrameworkElement.VerticalAlignmentProperty));
+            contentControl.SetValue(FrameworkElement.HorizontalAlignmentProperty, new TemplateBindingExtension(Control.HorizontalContentAlignmentProperty));
+            contentControl.SetValue(FrameworkElement.VerticalAlignmentProperty, new TemplateBindingExtension(Control.VerticalContentAlignmentProperty));
             contentControl.SetValue(FrameworkElement.MarginProperty, new TemplateBindingExtension(Control.PaddingProperty));
             contentControl.SetValue(Control.PaddingProperty, new TemplateBindingExtension(Control.PaddingProperty));
             border.AppendChild(contentControl);

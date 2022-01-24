@@ -33,6 +33,8 @@ namespace MVVMFramework.Controls
             Style = SetStyle(CreateButtonSetters(), CreateButtonTriggers());
             HorizontalAlignment = HorizontalAlignment.Center;
             VerticalAlignment = VerticalAlignment.Center;
+            HorizontalContentAlignment = HorizontalAlignment.Center;
+            VerticalContentAlignment = VerticalAlignment.Center;
             Margin = new Thickness(5, 0, 5, 15);
             Padding = new Thickness(5);
             Height = 30;
