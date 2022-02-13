@@ -72,11 +72,7 @@ namespace MVVMFramework.Localization
         public ConfirmationLabelTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "Confirmation";
     }
-    public class MoveDownLabelTranslatable : Translatable
-    {
-        public MoveDownLabelTranslatable(params object[] parameters) : base(parameters) { }
-        protected override string GetDefaultTranslation() => "Move down";
-    }
+
     public class CombiningSectionsLabelTranslatable : Translatable
     {
         public CombiningSectionsLabelTranslatable(params object[] parameters) : base(parameters) { }
@@ -191,7 +187,13 @@ namespace MVVMFramework.Localization
     public class MoveUpLabelTranslatable : Translatable
     {
         public MoveUpLabelTranslatable(params object[] parameters) : base(parameters) { }
-        protected override string GetDefaultTranslation() => "Move up";
+        protected override string GetDefaultTranslation() => "Move selected up";
+    }
+
+    public class MoveDownLabelTranslatable : Translatable
+    {
+        public MoveDownLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Move selected down";
     }
 
     public class SpeedChangerTranslatable : Translatable
@@ -218,6 +220,11 @@ namespace MVVMFramework.Localization
     {
         public RemoveLabelTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "Remove";
+    }
+    public class RemoveSelectedLabelTranslatable : Translatable
+    {
+        public RemoveSelectedLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Remove selected";
     }
     public class OperationCancelledTranslatable : Translatable
     {
@@ -257,7 +264,7 @@ namespace MVVMFramework.Localization
     public class ReduceVideoSizeLabelTranslatable : Translatable
     {
         public ReduceVideoSizeLabelTranslatable(params object[] parameters) : base(parameters) { }
-        protected override string GetDefaultTranslation() => "Reduce video size";
+        protected override string GetDefaultTranslation() => "Reduce video file size";
     }
     public class ChaptersSuccessfullyAddedTranslatable : Translatable
     {
@@ -528,16 +535,16 @@ namespace MVVMFramework.Localization
         protected override string GetDefaultTranslation() => "Done";
     }
 
-    public class ResizerTranslatable : Translatable
+    public class CropperTranslatable : Translatable
     {
-        public ResizerTranslatable(params object[] parameters) : base(parameters) { }
-        protected override string GetDefaultTranslation() => "Resizer";
+        public CropperTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Video Cropper";
     }
 
-    public class VideoSuccessfullyResizedTranslatable : Translatable
+    public class ImageCropperTranslatable : Translatable
     {
-        public VideoSuccessfullyResizedTranslatable(params object[] parameters) : base(parameters) { }
-        protected override string GetDefaultTranslation() => "Video successfully resized!";
+        public ImageCropperTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Image Cropper";
     }
 
     public class CropTranslatable : Translatable
@@ -550,6 +557,12 @@ namespace MVVMFramework.Localization
     {
         public VideoSuccessfullyCroppedTranslatable(params object[] parameters) : base(parameters) { }
         protected override string GetDefaultTranslation() => "Video successfully cropped!";
+    }
+
+    public class ImageSuccessfullyCroppedTranslatable : Translatable
+    {
+        public ImageSuccessfullyCroppedTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Image successfully cropped!";
     }
 
     public class CroppingLabelTranslatable : Translatable

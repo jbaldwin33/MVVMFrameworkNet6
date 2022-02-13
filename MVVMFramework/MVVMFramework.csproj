@@ -123,6 +123,6 @@
     <PostBuildEvent>xcopy /Y "$(OutputDir)MVVMFramework.dll" "$(SolutionDir)..\VideoEditorNetFramework\DLLs"
 if not exist "$(SolutionDir)..\VideoEditorNetFramework\DLLs\Localization" mkdir "$(SolutionDir)..\VideoEditorNetFramework\DLLs\Localization"
 xcopy /Y "$(OutputDir)Localization\*" "$(SolutionDir)..\VideoEditorNetFramework\DLLs\Localization"
-xcopy /Y "$(OutputDir)MVVMFramework.dll" "$(SolutionDir)..\Pokedex\Debug"</PostBuildEvent>
+xcopy /Y "$(OutputDir)MVVMFramework.dll" "$(SolutionDir)..\Pokedex\assemblies"</PostBuildEvent>
   </PropertyGroup>
 </Project>
