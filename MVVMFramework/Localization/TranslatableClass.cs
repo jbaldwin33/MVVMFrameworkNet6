@@ -32,9 +32,16 @@ namespace MVVMFramework.Localization
         {
             if (string.IsNullOrEmpty(masterLocalizationPath))
                 throw new Exception("Cannot read 'binaryFolder' variable from app.config / web.config.");
-
+            if (!File.Exists(masterLocalizationPath))
+            {
+                using (var stringWriter = new StringWriter())
+                {
+                    xmlSerializer.Serialize(stringWriter, LocalizationFile);
+                    File.WriteAllText(masterLocalizationPath, stringWriter.ToString(), Encoding.Unicode);
+                }
+            }
             using (var reader = new StreamReader(masterLocalizationPath))
-                LocalizationFile = (LocalizationClass)xmlSerializer.Deserialize(reader);
+                LocalizationFile = (LocalizationClass)xmlSerializer.Deserialize(reader) ?? new LocalizationClass();
             CurrentCultureInfo = CultureInfo.CurrentUICulture;
         }
 

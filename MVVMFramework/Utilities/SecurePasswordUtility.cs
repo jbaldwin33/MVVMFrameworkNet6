@@ -51,7 +51,7 @@ namespace MVVMFramework.Utilities
         public static string CreateSalt()
         {
             byte[] saltBytes = new byte[16];
-            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+            var rng = RandomNumberGenerator.Create();
             rng.GetBytes(saltBytes);
 
             return Convert.ToBase64String(saltBytes);

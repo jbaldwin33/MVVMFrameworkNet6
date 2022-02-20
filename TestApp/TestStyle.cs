@@ -36,7 +36,7 @@ namespace TestApp
             {
                 text = Convert.ToString(Convert.ToInt32(this.Minimum + this.TickFrequency * i), 10);
                 //g.DrawString(text, font, brush, drawRect.Left + tickFrequencySize * i, drawRect.Top + drawRect.Height/2, stringFormat);
-                formattedText = new FormattedText(text, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Verdana"), 8, Brushes.Black);
+                formattedText = new FormattedText(text, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Verdana"), 8, Brushes.Black, 1.25);
                 dc.DrawText(formattedText, new Point((tickFrequencySize * i), 30));
             }
         }

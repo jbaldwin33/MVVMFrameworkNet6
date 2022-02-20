@@ -10,7 +10,7 @@ namespace MVVMFramework.Localization
     public class LocalizationClass
     {
         [DataMember] public int PreferredLCID { get; set; }
-        [DataMember] public List<TranslatableElement> Items { get; set; }
+        [DataMember] public List<TranslatableElement> Items { get; set; } = new List<TranslatableElement>();
 
         public class TranslatableElement
         {

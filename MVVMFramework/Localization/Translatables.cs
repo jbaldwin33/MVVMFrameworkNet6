@@ -577,6 +577,19 @@ namespace MVVMFramework.Localization
         protected override string GetDefaultTranslation() => "Open crop window";
     }
 
+    public class EmbedSubsLabelTranslatable : Translatable
+    {
+        public EmbedSubsLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Embed subtitles for avi files?";
+    }
+
+    public class DeleteChapterFileLabelTranslatable : Translatable
+    {
+        public DeleteChapterFileLabelTranslatable(params object[] parameters) : base(parameters) { }
+        protected override string GetDefaultTranslation() => "Delete chapter file after process has completed?";
+    }
+
+
     #region Bank Client
 
     public class WelcomeTranslatable : Translatable
