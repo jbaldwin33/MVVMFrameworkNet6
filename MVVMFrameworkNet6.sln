@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMFramework", "MVVMFramework\MVVMFramework.csproj", "{17472EC3-7404-4245-A2E0-16D4702634DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVVMFrameworkNet6", "MVVMFrameworkNet6\MVVMFrameworkNet6.csproj", "{17472EC3-7404-4245-A2E0-16D4702634DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{3F01D308-0990-4D3B-8219-C3D7F10D6CE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp.csproj", "{3F01D308-0990-4D3B-8219-C3D7F10D6CE6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{17472EC3-7404-4245-A2E0-16D4702634DB} = {17472EC3-7404-4245-A2E0-16D4702634DB}
 	EndProjectSection
